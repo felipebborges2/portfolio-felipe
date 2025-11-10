@@ -14,17 +14,10 @@
     "isolatedModules": true,
     "jsx": "react-jsx",
     "incremental": true,
-
-    // 🔧 compatibilidade e caminhos
     "baseUrl": "src",
     "paths": {
       "@/*": ["*"]
     },
-
-    // ✅ ignora avisos de depreciação
-    "ignoreDeprecations": true,
-
-    // 🔩 integração com o Next.js
     "plugins": [{ "name": "next" }]
   },
   "include": [
