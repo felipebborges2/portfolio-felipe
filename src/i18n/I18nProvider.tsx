@@ -1,6 +1,8 @@
 "use client";
 import React, { createContext, useContext, useEffect, useMemo, useState } from "react";
-import { translations, Lang } from "./translations";
+import { translations } from "./translations";
+type Lang = keyof typeof translations;
+
 
 type I18nCtx = {
   lang: Lang;
