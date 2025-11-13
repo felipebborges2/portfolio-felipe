@@ -9,7 +9,7 @@ export default function Projects() {
 
   const projects = [
     {
-      title: "Europedia - Travel Explorer",
+      title: "Europedia - Find Your Destination",
       description: t("projects.europediaDesc"),
       tags: ["Next.js", "Tailwind", "React"],
       link: "https://europedia.vercel.app",
@@ -22,6 +22,13 @@ export default function Projects() {
       link: "https://courtview.vercel.app",
       repo: "https://github.com/felipebborges2/courtview",
     },
+    {
+  title: "FinZeit – Finance Manager",
+  description: t("projects.finzeitDesc"),
+  tags: ["Next.js", "Tailwind", "Recharts", "MongoDB", "React"],
+  link: "",
+  repo: "https://github.com/felipebborges2/finzeit",
+},
   ];
 
   return (

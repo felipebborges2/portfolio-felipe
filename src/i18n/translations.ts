@@ -45,6 +45,8 @@ export const translations = {
         "Interactive map and wishlist of European destinations.",
       courtviewDesc:
         "Teams, arenas, mascots and uniforms with clean UI.",
+      finzeitDesc:
+        "Manage your finances and take control of your life.",
     },
 
     // 🔹 SKILLS
