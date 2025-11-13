@@ -26,7 +26,7 @@ export default function Projects() {
   title: "FinZeit – Finance Manager",
   description: t("projects.finzeitDesc"),
   tags: ["Next.js", "Tailwind", "Recharts", "MongoDB", "React"],
-  link: "",
+  link: "https://finzeit.vercel.app",
   repo: "https://github.com/felipebborges2/finzeit",
 },
   ];
