@@ -11,35 +11,30 @@ export default function Skills() {
     {
       title: t("skills.groups.frontend"),
       color: "text-[#9b2242]",
-      skills: ["React", "Next.js", "TypeScript", "Tailwind CSS", "HTML/CSS"],
+      skills: ["React", "Next.js", "TypeScript", "Tailwind CSS", "UI/UX"],
     },
     {
       title: t("skills.groups.backend"),
       color: "text-[#9b2242]",
-      skills: ["Node.js", "Python", "Express.js", "FastAPI", "GraphQL"],
+      skills: ["Node.js", "Python", "Express.js", "FastAPI"],
     },
     {
       title: t("skills.groups.dbcloud"),
       color: "text-[#9b2242]",
-      skills: ["MongoDB", "PostgreSQL"],
+      skills: ["MongoDB", "PostgreSQL", "REST APIs", "NextAuth"],
     },
     {
       title: t("skills.groups.tools"),
       color: "text-[#9b2242]",
-      skills: ["Git", "Figma", "Jest", "Vercel"],
+      skills: ["Git & GitHub", "Figma", "VSCode", "Vercel"],
     },
   ];
 
   const extraSkills = [
-    "Agile Methodologies",
-    "Design Patterns",
-    "Clean Code",
-    "API REST",
-    "Microservices",
-    "DevOps",
-    "UI/UX Design",
-    "Testing",
-    "Performance Optimization",
+    "Responsive Design",
+    "API Integration",
+    "Componentization",
+    "State Management"
   ];
 
   return (
