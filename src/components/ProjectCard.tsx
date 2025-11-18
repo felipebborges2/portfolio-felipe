@@ -4,11 +4,19 @@ type Props = {
   tags: string[];
   link?: string;
   repo?: string;
+  image?: string;
 };
 
-export default function ProjectCard({ title, description, tags, link, repo }: Props) {
+export default function ProjectCard({ title, description, tags, link, repo, image }: Props) {
   return (
     <div className="card p-5 hover:translate-y-[-2px] transition">
+      {image && (
+        <img
+          src={image}
+          alt={`${title} screenshot`}
+          className="w-full h-40 object-cover rounded-md mb-4"
+        />
+      )}
       <h3 className="text-lg font-semibold">{title}</h3>
       <p className="mt-2 text-subtle">{description}</p>
       <div className="mt-3 flex flex-wrap gap-2 text-xs">

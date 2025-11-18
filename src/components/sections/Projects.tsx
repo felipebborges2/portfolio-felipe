@@ -1,30 +1,37 @@
 "use client";
+import { useState } from "react";
 import ProjectCard from "@/components/ProjectCard";
 import Reveal from "@/components/Reveal";
 import AnimatedCard from "@/components/AnimatedCard";
-import { useI18n } from "@/i18n/I18nProvider"; // 👈 import necessário
+import Lightbox from "@/components/Lightbox";
+import { useI18n } from "@/i18n/I18nProvider";
 
 export default function Projects() {
-  const { t } = useI18n(); // 👈 acesso às traduções
+  const { t } = useI18n(); // acesso às traduções
+  const [selectedImage, setSelectedImage] = useState<string | null>(null);
+  const [selectedAlt, setSelectedAlt] = useState<string>("");
 
   const projects = [
     {
       title: "Europedia - Find Your Destination",
       description: t("projects.europediaDesc"),
-      tags: ["Next.js", "Tailwind", "React"],
+        image: "/projects/europedia.jpeg",
+      tags: ["JavaScript", "HTML", "CSS"],
       link: "https://europedia.vercel.app",
       repo: "https://github.com/felipebborges2/europedia",
     },
     {
       title: "CourtView — NBA Explorer",
       description: t("projects.courtviewDesc"),
-      tags: ["React", "Vite", "Tailwind"],
+        image: "/projects/courtview.jpeg",
+      tags: ["React", "Next.js", "TypeScript", "Tailwind"],
       link: "https://courtview.vercel.app",
       repo: "https://github.com/felipebborges2/courtview",
     },
     {
   title: "FinZeit – Finance Manager",
   description: t("projects.finzeitDesc"),
+  image: "/projects/finzeit.jpeg",
   tags: ["Next.js", "Tailwind", "Recharts", "MongoDB", "React"],
   link: "https://finzeit.vercel.app",
   repo: "https://github.com/felipebborges2/finzeit",
@@ -49,6 +56,17 @@ export default function Projects() {
             key={i}
             className="p-6 flex flex-col items-start gap-3 w-full h-full"
           >
+            {p.image && (
+              <img
+                src={p.image}
+                alt={`${p.title} screenshot`}
+                className="w-full h-40 object-cover rounded-md mb-3 cursor-pointer"
+                onClick={() => {
+                  setSelectedImage(p.image ?? null);
+                  setSelectedAlt(p.title);
+                }}
+              />
+            )}
             <h3 className="text-lg font-semibold text-white">{p.title}</h3>
             <p className="text-[#9b9b9b] leading-relaxed text-sm">{p.description}</p>
 
@@ -84,6 +102,13 @@ export default function Projects() {
           </AnimatedCard>
         ))}
       </div>
+      {selectedImage && (
+        <Lightbox
+          src={selectedImage}
+          alt={selectedAlt}
+          onClose={() => setSelectedImage(null)}
+        />
+      )}
     </section>
   );
 }

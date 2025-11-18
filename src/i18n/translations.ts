@@ -1,6 +1,6 @@
 export const translations = {
     en: {
-    // 🔹 NAVIGATION
+    // NAVIGATION
     nav: {
       home: "Home",
       about: "About",
@@ -13,7 +13,7 @@ export const translations = {
       toggle: "PT / EN",
     },
 
-    // 🔹 HERO
+    // HERO
     hero: {
       title: "Hi, I’m Felipe Borges",
       subtitle:
@@ -21,7 +21,7 @@ export const translations = {
       ctaContact: "Contact Me",
       ctaProjects: "View Projects",
     },
-    // 🔹 ABOUT
+    // ABOUT
     about: {
       heading: "About",
       p1: "I’m Felipe Borges, a 23-year-old Medical Physics student at UFCSPA — Federal University of Health Sciences of Porto Alegre. My complete CV is available on the Lattes Platform and as a downloadable PDF.",
@@ -34,7 +34,7 @@ export const translations = {
       cvEn: "Download CV (English)",
     },
 
-    // 🔹 PROJECTS
+    // PROJECTS
     projects: {
       heading: "My Work",
       title: "Featured",
@@ -49,7 +49,7 @@ export const translations = {
         "A full-stack financial dashboard with Google authentication, categorized expenses, monthly analytics, data visualization and a clean modern UI. Built with Next.js 15, TypeScript, MongoDB and Tailwind.",
     },
 
-    // 🔹 SKILLS
+    // SKILLS
     skills: {
       heading: "Skills",
       title: "Technical",
@@ -64,7 +64,7 @@ export const translations = {
       },
     },
 
-    // 🔹 LANGUAGES
+    // LANGUAGES
     langs: {
       heading: "Languages",
       title: "Spoken",
@@ -77,7 +77,7 @@ export const translations = {
       },
     },
 
-    // 🔹 JOURNEY
+    // JOURNEY
     journey: {
   heading: "Journey",
   title: "My",
@@ -105,7 +105,7 @@ export const translations = {
   },
 },
 
-    // 🔹 CONTACT
+    // CONTACT
     contact: {
       heading: "Get in Touch",
       title: "Let's Connect",
@@ -119,7 +119,7 @@ export const translations = {
   },
 
   pt: {
-    // 🔹 NAVIGATION
+    // NAVIGATION
     nav: {
       home: "Início",
       about: "Sobre",
@@ -132,7 +132,7 @@ export const translations = {
       toggle: "EN / PT",
     },
 
-    // 🔹 HERO
+    // HERO
     hero: {
       title: "Olá, eu sou Felipe Borges",
       subtitle:
@@ -140,7 +140,7 @@ export const translations = {
       ctaContact: "Fale Comigo",
       ctaProjects: "Ver Projetos",
     },
-    // 🔹 ABOUT
+    // ABOUT
     about: {
       heading: "Sobre",
 p1: "Sou Felipe Borges, um estudante de Física Médica de 23 anos da UFCSPA — Universidade Federal de Ciências da Saúde de Porto Alegre. Meu currículo completo está disponível na Plataforma Lattes e como um PDF para download.",
@@ -153,7 +153,7 @@ cvPt: "Baixar CV (Português)",
 cvEn: "Baixar CV (Inglês)",
 },
 
-    // 🔹 PROJECTS
+    // PROJECTS
     projects: {
       heading: "Meus Trabalhos",
       title: "Projetos",
@@ -168,7 +168,7 @@ cvEn: "Baixar CV (Inglês)",
       "Um painel financeiro completo com autenticação do Google, despesas categorizadas, análises mensais, visualização de dados e uma interface de usuário moderna e intuitiva. Desenvolvido com Next.js 15, TypeScript, MongoDB e Tailwind.",
     },
 
-    // 🔹 SKILLS
+    // SKILLS
     skills: {
       heading: "Habilidades",
       title: "Minhas",
@@ -183,7 +183,7 @@ cvEn: "Baixar CV (Inglês)",
       },
     },
 
-    // 🔹 LANGUAGES
+    // LANGUAGES
     langs: {
       heading: "Línguas",
       title: "Línguas",
@@ -196,7 +196,7 @@ cvEn: "Baixar CV (Inglês)",
       },
     },
 
-    // 🔹 JOURNEY
+    // JOURNEY
     journey: {
   heading: "Trajetória",
   title: "Minha",
@@ -224,7 +224,7 @@ cvEn: "Baixar CV (Inglês)",
   },
 },
 
-    // 🔹 CONTACT
+    // CONTACT
     contact: {
       heading: "Entre em Contato",
       title: "Vamos Conversar",
