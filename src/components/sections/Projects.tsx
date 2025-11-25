@@ -13,6 +13,14 @@ export default function Projects() {
 
   const projects = [
     {
+      title: "AtlasMind - Plan Less, Explore More",
+      description: t("projects.atlasmindDesc"),
+        image: "/projects/atlasmind.jpeg",
+      tags: ["Next.js", "TypeScript", "React", "Tailwind", "OpenAI API", "Node.js"],
+      link: "https://atlasmind.vercel.app",
+      repo: "https://github.com/felipebborges2/atlasmind",
+    },
+    {
       title: "Europedia - Find Your Destination",
       description: t("projects.europediaDesc"),
         image: "/projects/europedia.jpeg",

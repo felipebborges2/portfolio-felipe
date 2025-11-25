@@ -1,3 +1,5 @@
+import { a } from "framer-motion/client";
+
 export const translations = {
     en: {
     // NAVIGATION
@@ -41,6 +43,8 @@ export const translations = {
       highlight: "Projects",
       live: "Live",
       github: "GitHub",
+      atlasmindDesc:
+        "An intelligent travel-planning platform that creates complete itineraries based on user preferences.",
       europediaDesc:
         "A lightweight and responsive travel guide for European destinations, built with pure JavaScript, HTML and CSS.",
       courtviewDesc:
@@ -160,6 +164,8 @@ cvEn: "Baixar CV (Inglês)",
       highlight: "em Destaque",
       live: "Ver Online",
       github: "GitHub",
+      atlasmindDesc:
+        "Uma plataforma inteligente de planejamento de viagens que cria roteiros completos com base nas preferências do usuário.",
       europediaDesc:
         "Um guia de viagens leve e responsivo para destinos europeus, desenvolvido com JavaScript, HTML e CSS puros.",
       courtviewDesc:
