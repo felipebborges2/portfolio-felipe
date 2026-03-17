@@ -16,25 +16,26 @@ export default function Skills() {
     {
       title: t("skills.groups.backend"),
       color: "text-[#9b2242]",
-      skills: ["Node.js", "Python", "Express.js", "FastAPI"],
+      skills: ["Python", "Node.js", "FastAPI", "Express.js"],
+    },
+    {
+      title: t("skills.groups.dataai"),
+      color: "text-[#9b2242]",
+      skills: ["Machine Learning", "scikit-learn", "Pandas", "NumPy", "OpenAI API"],
     },
     {
       title: t("skills.groups.dbcloud"),
       color: "text-[#9b2242]",
-      skills: ["MongoDB", "PostgreSQL", "REST APIs", "NextAuth"],
-    },
-    {
-      title: t("skills.groups.tools"),
-      color: "text-[#9b2242]",
-      skills: ["Git & GitHub", "Figma", "VSCode", "Vercel"],
+      skills: ["MongoDB", "PostgreSQL", "REST APIs", "Vercel"],
     },
   ];
 
   const extraSkills = [
     "Responsive Design",
     "API Integration",
-    "Componentization",
-    "State Management"
+    "MRI Radiomics",
+    "State Management",
+    "Data Visualization",
   ];
 
   return (

@@ -19,19 +19,19 @@ export const translations = {
     hero: {
       title: "Hi, I’m Felipe Borges",
       subtitle:
-        "Medical Physics Student & Full Stack Developer — building modern, fast and elegant applications with Next.js, TypeScript and clean UI.",
+        "Medical Physics Student & Python Developer — building AI-powered tools and ML models at the intersection of health sciences and software engineering.",
       ctaContact: "Contact Me",
       ctaProjects: "View Projects",
     },
     // ABOUT
     about: {
       heading: "About",
-      p1: "I’m Felipe Borges, a 23-year-old Medical Physics student at UFCSPA — Federal University of Health Sciences of Porto Alegre. My complete CV is available on the Lattes Platform and as a downloadable PDF.",
-      p2: "My background in Medical Physics strengthened my analytical thinking, problem-solving and scientific rigor — skills I now apply directly to software engineering. Over the past years, I’ve built full-stack products, dashboards, design systems and data-driven applications that combine clean UI, strong architecture and real-world functionality.",
-      p3: "Currently, I’m part of a research project focused on developing and validating a machine learning model based on MRI radiomic features to predict tumor progression in patients with acoustic neuroma under initial observation.",
-      p4: "In parallel, I’ve been expanding my technical expertise in JavaScript, React, Node.js, TypeScript, and AI integration.",
+      p1: "I’m Felipe Borges, a 23-year-old Medical Physics student at UFCSPA (Federal University of Health Sciences of Porto Alegre). My complete CV is available on the Lattes Platform and as a downloadable PDF.",
+      p2: "My background in Medical Physics gives me a rare perspective in software engineering. I combine scientific rigor with hands-on experience building ML models, AI-powered applications, and full-stack products — a combination most developers simply don’t have.",
+      p3: "I volunteer in a university research project developing and validating a machine learning model based on MRI radiomic features to predict tumor progression in patients with acoustic neuroma.",
+      p4: "My technical stack spans Python, scikit-learn, Pandas, NumPy and OpenAI API for data and AI work — alongside JavaScript, React, TypeScript, Node.js and FastAPI for full-stack development.",
       p5: "I’m fluent in English, currently learning German, and can read and understand Spanish.",
-      p6: "I learn fast, I enjoy working on challenging problems, and I’m motivated by building reliable, elegant and scalable digital solutions. I’m currently seeking a full-stack or frontend developer role where I can contribute, grow and work alongside a strong engineering team.",
+      p6: "I’m motivated by problems at the intersection of data, health, and technology. I’m open to roles in AI/ML engineering, data science, or full-stack development.",
       cvPt: "Download CV (Portuguese)",
       cvEn: "Download CV (English)",
     },
@@ -51,6 +51,8 @@ export const translations = {
         "A fast and elegant NBA dashboard showcasing team identity, colors, logos and player organization. Designed with strong UI/UX principles and built with React, TypeScript and Tailwind.",
       finzeitDesc:
         "A full-stack financial dashboard with Google authentication, categorized expenses, monthly analytics, data visualization and a clean modern UI. Built with Next.js 15, TypeScript, MongoDB and Tailwind.",
+      oncopredictDesc:
+        "A machine learning project focused on cancer outcome prediction — applying Python and data science to build models that bridge Medical Physics knowledge with real clinical impact.",
     },
 
     // SKILLS
@@ -63,6 +65,7 @@ export const translations = {
       groups: {
         frontend: "Frontend",
         backend: "Backend",
+        dataai: "Data & AI",
         dbcloud: "Database & Cloud",
         tools: "Tools & Other",
       },
@@ -140,19 +143,19 @@ export const translations = {
     hero: {
       title: "Olá, eu sou Felipe Borges",
       subtitle:
-        "Graduando em Física Médica e Desenvolvedor Full Stack — Criando aplicações modernas, rápidas e elegantes com Next.js, TypeScript e uma interface de usuário limpa.",
+        "Graduando em Física Médica e Desenvolvedor Python — criando ferramentas com IA e modelos de Machine Learning na interseção entre ciências da saúde e engenharia de software.",
       ctaContact: "Fale Comigo",
       ctaProjects: "Ver Projetos",
     },
     // ABOUT
     about: {
       heading: "Sobre",
-p1: "Sou Felipe Borges, um estudante de Física Médica de 23 anos da UFCSPA — Universidade Federal de Ciências da Saúde de Porto Alegre. Meu currículo completo está disponível na Plataforma Lattes e como um PDF para download.",
-p2: "Minha formação em Física Médica fortaleceu meu pensamento analítico, minha capacidade de resolução de problemas e meu rigor científico — habilidades que agora aplico diretamente à engenharia de software. Nos últimos anos, desenvolvi produtos full-stack, dashboards, sistemas de design e aplicativos orientados a dados que combinam interfaces de usuário limpas, arquitetura robusta e funcionalidades práticas.",
-p3: "Atualmente, participo de um projeto de pesquisa focado no desenvolvimento e validação de um modelo de aprendizado de máquina baseado em características radiômicas de ressonância magnética para prever a progressão tumoral em pacientes com neurinoma do acústico em observação inicial.",
-p4: "Paralelamente, tenho expandido minha expertise técnica em JavaScript, React, Node.js, TypeScript e integração de IA.",
+p1: "Sou Felipe Borges, um estudante de Física Médica de 23 anos da UFCSPA (Universidade Federal de Ciências da Saúde de Porto Alegre). Meu currículo completo está disponível na Plataforma Lattes e como um PDF para download.",
+p2: "Minha formação em Física Médica me dá uma perspectiva rara na engenharia de software. Combino o rigor científico com experiência prática em modelos de ML, aplicações com IA e produtos full-stack — uma combinação que a grande maioria dos desenvolvedores não tem.",
+p3: "Sou voluntário em um projeto de pesquisa universitária que desenvolve e valida um modelo de ML baseado em características radiômicas de ressonância magnética para prever a progressão tumoral em pacientes com neurinoma do acústico.",
+p4: "Meu stack técnico inclui Python, scikit-learn, Pandas, NumPy e OpenAI API para trabalhos de dados e IA — além de JavaScript, React, TypeScript, Node.js e FastAPI para desenvolvimento full-stack.",
 p5: "Sou fluente em inglês, estou aprendendo alemão e consigo ler e entender Espanhol.",
-p6: "Aprendo rápido, gosto de trabalhar em problemas desafiadores e sou motivado por construir soluções digitais confiáveis, elegantes e escaláveis. Atualmente, estou buscando uma vaga de desenvolvedor full-stack ou frontend onde eu possa contribuir, crescer e trabalhar ao lado de uma equipe de engenharia sólida.",
+p6: "Sou motivado por problemas na interseção de dados, saúde e tecnologia. Estou aberto a vagas em engenharia de IA/ML, ciência de dados ou desenvolvimento full-stack.",
 cvPt: "Baixar CV (Português)",
 cvEn: "Baixar CV (Inglês)",
 },
@@ -172,6 +175,8 @@ cvEn: "Baixar CV (Inglês)",
         "Um painel de controle da NBA rápido e elegante que exibe a identidade da equipe, cores, logotipos e organização dos jogadores. Projetado com sólidos princípios de UI/UX e construído com React, TypeScript e Tailwind.",
       finzeitDesc:
       "Um painel financeiro completo com autenticação do Google, despesas categorizadas, análises mensais, visualização de dados e uma interface de usuário moderna e intuitiva. Desenvolvido com Next.js 15, TypeScript, MongoDB e Tailwind.",
+      oncopredictDesc:
+        "Um projeto de machine learning focado na predição de desfechos oncológicos — aplicando Python e ciência de dados para construir modelos que conectam o conhecimento em Física Médica a impacto clínico real.",
     },
 
     // SKILLS
@@ -184,6 +189,7 @@ cvEn: "Baixar CV (Inglês)",
       groups: {
         frontend: "Frontend",
         backend: "Backend",
+        dataai: "Dados & IA",
         dbcloud: "Banco de Dados & Cloud",
         tools: "Ferramentas & Outros",
       },
@@ -226,7 +232,7 @@ cvEn: "Baixar CV (Inglês)",
     institution: "Colégio Helyos",
     function: "Ensino Médio",
     desc:
-      "Me graduei em uma escola bilíngue — a mesma em que estudei por toda a minha vida — com contato contínuo com a língua e a cultura inglesa. Realizei simulados de TOEFL, Cambridge e SAT, o que fortaleceu minha fluência e o inglês acadêmico. A instituição é reconhecida na cidade, no estado e no país, tendo ficado em 31º lugar nacional em 2014.",
+      "Me graduei em uma escola bilíngue com contato contínuo com a língua e a cultura inglesa. Realizei simulados de TOEFL, Cambridge e SAT, o que fortaleceu minha fluência e o inglês acadêmico. A instituição é reconhecida na cidade, no estado e no país, tendo ficado em 31º lugar nacional em 2014.",
   },
 },
 

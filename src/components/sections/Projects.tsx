@@ -13,6 +13,14 @@ export default function Projects() {
 
   const projects = [
     {
+      title: "OncoPredict",
+      description: t("projects.oncopredictDesc"),
+      image: "/projects/oncopredict.jpeg",
+      tags: ["Python", "Machine Learning", "scikit-learn", "Pandas", "NumPy"],
+      link: undefined,
+      repo: "https://github.com/felipebborges2/OncoPredict",
+    },
+    {
       title: "AtlasMind - Plan Less, Explore More",
       description: t("projects.atlasmindDesc"),
         image: "/projects/atlasmind.jpeg",
@@ -90,14 +98,16 @@ export default function Projects() {
             </div>
 
             <div className="mt-4 flex gap-4 text-sm">
-              <a
-                href={p.link}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-white hover:text-[#9b2242] transition"
-              >
-                {t("projects.live")}
-              </a>
+              {p.link && (
+                <a
+                  href={p.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-white hover:text-[#9b2242] transition"
+                >
+                  {t("projects.live")}
+                </a>
+              )}
               <a
                 href={p.repo}
                 target="_blank"
