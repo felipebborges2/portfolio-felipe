@@ -29,9 +29,11 @@ export function I18nProvider({ children }: { children: React.ReactNode }) {
     const dict = translations[lang];
     return (path: string) => {
       const parts = path.split(".");
-      let cur: any = dict;
-      for (const p of parts) cur = cur?.[p];
-      return (typeof cur === "string" ? cur : path) as string;
+      let cur: unknown = dict;
+      for (const p of parts) {
+        cur = cur && typeof cur === "object" ? (cur as Record<string, unknown>)[p] : undefined;
+      }
+      return typeof cur === "string" ? cur : path;
     };
   }, [lang]);
 

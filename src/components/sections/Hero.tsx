@@ -2,7 +2,6 @@
 import Reveal from "@/components/Reveal";
 import { motion } from "framer-motion";
 import { Github, Linkedin, Mail } from "lucide-react";
-import AnimatedCard from "@/components/AnimatedCard";
 import { useI18n } from "@/i18n/I18nProvider"; // 👈 import adicionado
 
 export default function Hero() {

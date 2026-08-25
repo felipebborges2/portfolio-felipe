@@ -1,7 +1,5 @@
 "use client";
 import { useState } from "react";
-import ProjectCard from "@/components/ProjectCard";
-import Reveal from "@/components/Reveal";
 import AnimatedCard from "@/components/AnimatedCard";
 import Lightbox from "@/components/Lightbox";
 import { useI18n } from "@/i18n/I18nProvider";

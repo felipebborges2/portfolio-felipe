@@ -5,7 +5,7 @@ import tsparser from "@typescript-eslint/parser";
 
 export default [
   {
-    ignores: ["**/*.js"],
+    ignores: ["**/*.js", ".next/**", ".claude/**", "node_modules/**"],
   },
   {
     files: ["**/*.{ts,tsx}"],
@@ -17,8 +17,8 @@ export default [
       next: eslintPluginNext
     },
     rules: {
-      "@typescript-eslint/no-explicit-any": "off",
-      "@typescript-eslint/no-unused-vars": "off",
+      "@typescript-eslint/no-explicit-any": "warn",
+      "@typescript-eslint/no-unused-vars": "warn",
       "no-unused-vars": "off"
     }
   }
