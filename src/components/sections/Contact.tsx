@@ -1,7 +1,7 @@
 "use client";
 import { Mail, Phone, MapPin } from "lucide-react";
 import { motion } from "framer-motion";
-import { useI18n } from "@/i18n/I18nProvider"; // 👈 import necessário
+import { useI18n } from "@/i18n/I18nProvider";
 
 export default function Contact() {
   const { t } = useI18n(); // 👈 acesso às traduções
@@ -47,8 +47,8 @@ export default function Contact() {
             {
               icon: <Mail className="text-[#9b2242]" />,
               title: t("contact.email"),
-              content: "felipe.borges@ufcspa.edu.br",
-              href: "mailto:felipe.borges@ufcspa.edu.br",
+              content: "fisfelipeborges@gmail.com",
+              href: "mailto:fisfelipeborges@gmail.com",
             },
             {
               icon: <Phone className="text-[#9b2242]" />,
