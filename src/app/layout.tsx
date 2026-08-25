@@ -4,7 +4,8 @@ import { I18nProvider } from "@/i18n/I18nProvider";
 
 export const metadata = {
   title: "Felipe Borges • Portfolio",
-  description: "Medical Physics Student & Full Stack Developer",
+  description:
+    "Data Science & Machine Learning practitioner with a Medical Physics foundation, building ML models and full-stack AI-powered products.",
   icons: {
     icon: "/newfavicon.ico",
     shortcut: "/newfavicon.ico",
