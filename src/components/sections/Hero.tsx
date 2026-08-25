@@ -51,7 +51,7 @@ export default function Hero() {
               </a>
               <a
                 className="link-subtle"
-                href="mailto:felipe.borges@ufcspa.edu.br"
+                href="mailto:fisfelipeborges@gmail.com"
               >
                 <Mail />
               </a>
