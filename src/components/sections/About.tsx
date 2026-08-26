@@ -21,7 +21,7 @@ export default function About() {
       </Reveal>
 
       <Reveal delay={0.2}>
-        <div className="max-w-3xl mx-auto text-left space-y-4">
+        <div className="prose-measure text-left space-y-4">
           <p className="text-[#9b9b9b] leading-relaxed">{t("about.p1")}</p>
           <p className="text-[#9b9b9b] leading-relaxed">{t("about.p2")}</p>
         </div>
@@ -39,7 +39,7 @@ export default function About() {
       </Reveal>
 
       <Reveal delay={0.4}>
-        <div className="mt-8 flex flex-col sm:flex-row justify-center items-center gap-4">
+        <div className="mt-10 flex flex-col sm:flex-row justify-center items-center gap-4">
           <AnimatedCard
             href="/curriculo-felipe-borges-pt.pdf"
             download

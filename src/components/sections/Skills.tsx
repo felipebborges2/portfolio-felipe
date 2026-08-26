@@ -3,7 +3,27 @@ import { motion } from "framer-motion";
 import Reveal from "@/components/Reveal";
 import AnimatedCard from "@/components/AnimatedCard";
 import { useI18n } from "@/i18n/I18nProvider";
-import { skillGroups } from "@/data/skills";
+import { skillGroups, type SkillLevel } from "@/data/skills";
+
+const LEVEL_DOTS: Record<SkillLevel, number> = {
+  advanced: 3,
+  intermediate: 2,
+  familiar: 1,
+};
+
+function LevelMeter({ level }: { level: SkillLevel }) {
+  const filled = LEVEL_DOTS[level];
+  return (
+    <span className="flex items-center gap-0.5" aria-hidden="true">
+      {[1, 2, 3].map((dot) => (
+        <span
+          key={dot}
+          className={`h-1.5 w-1.5 rounded-full ${dot <= filled ? "bg-[#9b2242]" : "bg-[#2a2a2a]"}`}
+        />
+      ))}
+    </span>
+  );
+}
 
 export default function Skills() {
   const { t } = useI18n();
@@ -29,36 +49,41 @@ export default function Skills() {
       </Reveal>
 
       <Reveal delay={0.2}>
-        <div className="grid sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-6xl w-full">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl w-full items-stretch">
           {skillGroups.map((group, i) => (
             <AnimatedCard
               key={group.id}
-              className="p-6 flex flex-col items-center text-center gap-3"
+              align="start"
+              className="p-6 flex flex-col gap-3"
             >
               <motion.div
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: i * 0.2 }}
+                transition={{ duration: 0.8, delay: i * 0.15 }}
                 viewport={{ once: true }}
-                className="w-full"
+                className="w-full flex flex-col gap-3"
               >
-                <h3 className="text-lg font-semibold text-[#9b2242] mb-4">
+                <h3 className="text-base font-semibold text-[#9b2242]">
                   {t(`skills.groups.${group.titleKey}`)}
                 </h3>
 
-                <div className="flex flex-col gap-2">
+                <ul className="flex flex-col gap-2">
                   {group.skills.map((skill) => (
-                    <div
+                    <li
                       key={skill.name}
                       className="flex items-center justify-between gap-3 bg-[#1f1f1f] text-sm px-3 py-2 rounded-md border border-[#2a2a2a] hover:border-[#9b2242] transition"
+                      title={t(`skills.levels.${skill.level}`)}
                     >
                       <span className="text-white">{skill.name}</span>
-                      <span className="text-[10px] uppercase tracking-wide text-[#9b9b9b]">
-                        {t(`skills.levels.${skill.level}`)}
+                      <span className="flex items-center gap-1.5 shrink-0">
+                        <span className="text-[10px] uppercase tracking-wide text-[#9b9b9b]">
+                          {t(`skills.levels.${skill.level}`)}
+                        </span>
+                        <LevelMeter level={skill.level} />
                       </span>
-                    </div>
+                    </li>
                   ))}
-                </div>
+                </ul>
               </motion.div>
             </AnimatedCard>
           ))}

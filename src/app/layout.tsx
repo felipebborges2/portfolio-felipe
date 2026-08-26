@@ -16,7 +16,7 @@ export const metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
-      <body className="bg-[#0a0a0a] text-white">
+      <body className="bg-bg text-white">
         {/* 👇 Tudo que usa useI18n precisa estar dentro do Provider */}
         <I18nProvider>
           <Navbar />

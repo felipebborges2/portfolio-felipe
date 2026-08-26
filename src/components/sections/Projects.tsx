@@ -1,5 +1,6 @@
 "use client";
 import { useState } from "react";
+import { ExternalLink, Github } from "lucide-react";
 import AnimatedCard from "@/components/AnimatedCard";
 import Lightbox from "@/components/Lightbox";
 import { useI18n } from "@/i18n/I18nProvider";
@@ -22,11 +23,19 @@ export default function Projects() {
         </h2>
       </div>
 
-      <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-8 justify-center max-w-5xl">
+      {/*
+        flex-wrap (not grid) so an incomplete last row centers itself
+        instead of hanging left under a rigid column grid.
+      */}
+      <div className="flex flex-wrap justify-center gap-8 max-w-5xl w-full">
         {projects.map((p) => {
           const content = p.content[lang];
           return (
-            <AnimatedCard key={p.id} className="p-6 flex flex-col items-start gap-3 w-full h-full text-left">
+            <AnimatedCard
+              key={p.id}
+              align="start"
+              className="p-6 flex flex-col gap-3 w-full sm:w-[calc(50%-1rem)] lg:w-[calc(33.333%-1.334rem)]"
+            >
               <img
                 src={p.image.src}
                 alt={p.image.alt[lang]}
@@ -51,23 +60,23 @@ export default function Projects() {
                   <dt className="uppercase tracking-wide text-[10px] text-[#9b9b9b]/70 font-semibold">
                     {t("projects.problemLabel")}
                   </dt>
-                  <dd className="text-[#9b9b9b] leading-relaxed">{content.problem}</dd>
+                  <dd className="text-[#9b9b9b] leading-relaxed line-clamp-2">{content.problem}</dd>
                 </div>
                 <div>
                   <dt className="uppercase tracking-wide text-[10px] text-[#9b9b9b]/70 font-semibold">
                     {t("projects.approachLabel")}
                   </dt>
-                  <dd className="text-[#9b9b9b] leading-relaxed">{content.approach}</dd>
+                  <dd className="text-[#9b9b9b] leading-relaxed line-clamp-2">{content.approach}</dd>
                 </div>
                 <div>
                   <dt className="uppercase tracking-wide text-[10px] text-[#9b9b9b]/70 font-semibold">
                     {t("projects.resultLabel")}
                   </dt>
-                  <dd className="text-[#9b9b9b] leading-relaxed">{content.result}</dd>
+                  <dd className="text-[#9b9b9b] leading-relaxed line-clamp-2">{content.result}</dd>
                 </div>
               </dl>
 
-              <div className="flex flex-wrap gap-2 mt-2">
+              <div className="flex flex-wrap gap-2">
                 {p.tags.map((tag) => (
                   <span
                     key={tag}
@@ -78,14 +87,17 @@ export default function Projects() {
                 ))}
               </div>
 
-              <div className="mt-4 flex gap-4 text-sm">
+              {/* mt-auto pins the link row to the card's bottom edge, so
+                  cards with shorter copy still line up across a row. */}
+              <div className="mt-auto pt-2 flex gap-3">
                 {p.links.live && (
                   <a
                     href={p.links.live}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-white hover:text-[#9b2242] transition"
+                    className="link-btn"
                   >
+                    <ExternalLink className="w-3.5 h-3.5" aria-hidden="true" />
                     {t("projects.live")}
                   </a>
                 )}
@@ -93,8 +105,9 @@ export default function Projects() {
                   href={p.links.repo}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-white hover:text-[#9b2242] transition"
+                  className="link-btn"
                 >
+                  <Github className="w-3.5 h-3.5" aria-hidden="true" />
                   {t("projects.github")}
                 </a>
               </div>

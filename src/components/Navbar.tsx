@@ -1,6 +1,7 @@
 "use client";
 import Link from "next/link";
 import { useState } from "react";
+import { Menu, X } from "lucide-react";
 import { useI18n } from "@/i18n/I18nProvider"; // 👈 import adicionado
 
 const items = [
@@ -36,54 +37,59 @@ export default function Navbar() {
             {t("nav.contactMe")} {/* 👈 traduz "Contact Me" */}
           </a>
 
-{/* Switch de idioma estilo iPhone (EN à esquerda, PT à direita) */}
-<div className="flex items-center gap-3 select-none">
-  {/* Label EN */}
-  <span
-    className={`text-sm font-medium transition-colors ${
-      lang === "en" ? "text-[#9b2242]" : "text-[#9b9b9b]"
-    }`}
-  >
-    EN
-  </span>
+          {/* Switch de idioma estilo iPhone (EN à esquerda, PT à direita) */}
+          <button
+            type="button"
+            onClick={() => setLang(lang === "en" ? "pt" : "en")}
+            aria-label={t("nav.toggle")}
+            className="flex items-center gap-3 select-none"
+          >
+            <span
+              className={`text-sm font-medium transition-colors ${
+                lang === "en" ? "text-[#9b2242]" : "text-[#9b9b9b]"
+              }`}
+            >
+              EN
+            </span>
 
-  {/* Switch */}
-  <div
-    onClick={() => setLang(lang === "en" ? "pt" : "en")}
-    className={`relative w-12 h-6 rounded-full cursor-pointer transition-colors duration-300 ${
-      lang === "pt" ? "bg-[#9b2242]" : "bg-gray-500"
-    }`}
-  >
-    <div
-      className={`absolute top-[2px] left-[2px] w-[22px] h-[22px] bg-white rounded-full shadow-md transform transition-transform duration-300 ease-out ${
-        lang === "pt" ? "translate-x-6" : "translate-x-0"
-      }`}
-    />
-  </div>
+            <span
+              aria-hidden="true"
+              className={`relative w-12 h-6 rounded-full transition-colors duration-300 ${
+                lang === "pt" ? "bg-[#9b2242]" : "bg-gray-500"
+              }`}
+            >
+              <span
+                className={`absolute top-[2px] left-[2px] w-[22px] h-[22px] bg-white rounded-full shadow-md block transform transition-transform duration-300 ease-out ${
+                  lang === "pt" ? "translate-x-6" : "translate-x-0"
+                }`}
+              />
+            </span>
 
-  {/* Label PT */}
-  <span
-    className={`text-sm font-medium transition-colors ${
-      lang === "pt" ? "text-[#9b2242]" : "text-[#9b9b9b]"
-    }`}
-  >
-    PT
-  </span>
-</div>
-
-
-
+            <span
+              className={`text-sm font-medium transition-colors ${
+                lang === "pt" ? "text-[#9b2242]" : "text-[#9b9b9b]"
+              }`}
+            >
+              PT
+            </span>
+          </button>
         </nav>
 
         {/* Menu Mobile */}
-        <button onClick={() => setOpen(!open)} className="md:hidden btn">
-          Menu
+        <button
+          onClick={() => setOpen(!open)}
+          aria-label={open ? t("nav.closeMenu") : t("nav.openMenu")}
+          aria-expanded={open}
+          aria-controls="mobile-menu"
+          className="md:hidden btn p-2"
+        >
+          {open ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
         </button>
       </div>
 
       {/* Dropdown Mobile */}
       {open && (
-        <div className="md:hidden border-t border-border bg-bg">
+        <div id="mobile-menu" className="md:hidden border-t border-border bg-bg">
           <div className="container-p py-4 flex flex-col gap-3">
             {items.map((i) => (
               <a

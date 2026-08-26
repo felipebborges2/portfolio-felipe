@@ -8,7 +8,7 @@ export default function Hero() {
   const { t } = useI18n(); // 👈 acesso às traduções
 
   return (
-    <section id="home" className="section pt-32 md:pt-36">
+    <section id="home" className="section pt-24 md:pt-28">
       <Reveal delay={0}>
         <div className="grid gap-10 md:grid-cols-2 items-center">
           <div className="space-y-6">

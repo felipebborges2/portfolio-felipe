@@ -11,6 +11,8 @@ export const translations = {
       contact: "Contact",
       contactMe: "Contact Me",
       toggle: "PT / EN",
+      openMenu: "Open menu",
+      closeMenu: "Close menu",
     },
 
     // HERO
@@ -97,6 +99,21 @@ export const translations = {
       location: "Location",
       city: "Porto Alegre, RS – Brazil",
       foot: "Usually replies within 24 hours — feel free to reach out anytime.",
+      form: {
+        name: "Name",
+        namePlaceholder: "Your name",
+        email: "Email",
+        emailPlaceholder: "you@example.com",
+        message: "Message",
+        messagePlaceholder: "What would you like to talk about?",
+        submit: "Send Message",
+        note: "Opens your email app with this message pre-filled, addressed to me.",
+      },
+    },
+
+    // FOOTER
+    footer: {
+      rights: "All rights reserved.",
     },
   },
 
@@ -112,6 +129,8 @@ export const translations = {
       contact: "Contato",
       contactMe: "Fale Comigo",
       toggle: "EN / PT",
+      openMenu: "Abrir menu",
+      closeMenu: "Fechar menu",
     },
 
     // HERO
@@ -198,6 +217,21 @@ export const translations = {
       location: "Localização",
       city: "Porto Alegre, RS – Brasil",
       foot: "Normalmente respondo em até 24 horas — chame quando quiser.",
+      form: {
+        name: "Nome",
+        namePlaceholder: "Seu nome",
+        email: "Email",
+        emailPlaceholder: "voce@exemplo.com",
+        message: "Mensagem",
+        messagePlaceholder: "Sobre o que você quer falar?",
+        submit: "Enviar Mensagem",
+        note: "Abre seu aplicativo de email com essa mensagem já preenchida, endereçada a mim.",
+      },
+    },
+
+    // FOOTER
+    footer: {
+      rights: "Todos os direitos reservados.",
     },
   },
 } as const;
