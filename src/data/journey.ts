@@ -4,7 +4,7 @@ import { formatGraduationShort, profile } from "./profile";
 export type JourneyActivity = {
   id: string;
   /** Years only, as documented — no invented months. */
-  period?: string;
+  period?: Localized<string>;
   title: Localized<string>;
   /** Only confirmed facts — no invented periods or outcomes. */
   text: Localized<string>;
@@ -30,8 +30,8 @@ const graduated = profile.graduated;
 
 function ufcspaPeriod(lang: Lang): string {
   const end = formatGraduationShort(lang);
-  if (graduated) return `2021 – ${end}`;
-  return lang === "pt" ? `2021 – ${end} (previsto)` : `2021 – ${end} (expected)`;
+  if (graduated) return lang === "pt" ? `2021 a ${end}` : `2021 to ${end}`;
+  return lang === "pt" ? `2021 a ${end} (previsto)` : `2021 to ${end} (expected)`;
 }
 
 export const journeyItems: JourneyItem[] = [
@@ -39,8 +39,8 @@ export const journeyItems: JourneyItem[] = [
     id: "uni",
     period: { en: ufcspaPeriod("en"), pt: ufcspaPeriod("pt") },
     institution: {
-      en: "UFCSPA — Federal University of Health Sciences of Porto Alegre",
-      pt: "UFCSPA — Universidade Federal de Ciências da Saúde de Porto Alegre",
+      en: "UFCSPA, Federal University of Health Sciences of Porto Alegre",
+      pt: "UFCSPA, Universidade Federal de Ciências da Saúde de Porto Alegre",
     },
     role: graduated
       ? { en: "B.Sc. in Medical Physics", pt: "Bacharel em Física Médica" }
@@ -50,15 +50,15 @@ export const journeyItems: JourneyItem[] = [
       pt: "TCC em deep learning para imagem médica, iniciação científica em dosimetria de TC pediátrica com artigo publicado e coordenação de um podcast de iniciação à docência.",
     },
     detail: {
-      en: "During my degree, I've been part of research projects aimed at optimizing medical imaging and radiation protection. These experiences strengthened my skills in research, scientific communication, and problem-solving — the same analytical mindset I apply today in data science and software development.",
-      pt: "Durante a graduação, participei de projetos de pesquisa voltados à otimização de imagens médicas e proteção radiológica. Essas experiências fortaleceram minhas habilidades de pesquisa, comunicação científica e resolução de problemas — a mesma lógica analítica que hoje aplico em ciência de dados e desenvolvimento de software.",
+      en: "During my degree, I've been part of research projects aimed at optimizing medical imaging and radiation protection. These experiences strengthened my skills in research, scientific communication, and problem-solving: the same analytical mindset I apply today in data science and software development.",
+      pt: "Durante a graduação, participei de projetos de pesquisa voltados à otimização de imagens médicas e proteção radiológica. Essas experiências fortaleceram minhas habilidades de pesquisa, comunicação científica e resolução de problemas, a mesma lógica analítica que hoje aplico em ciência de dados e desenvolvimento de software.",
     },
     activities: [
       {
         id: "tcc",
         title: {
-          en: "Undergraduate thesis (TCC) — deep learning generalization for PCOS detection",
-          pt: "TCC — generalização de deep learning na detecção de PCOS",
+          en: "Undergraduate thesis (TCC): deep learning generalization for PCOS detection",
+          pt: "TCC: generalização de deep learning na detecção de PCOS",
         },
         text: {
           en: "ResNet-50 evaluated across ultrasound datasets from different sources, with a federated approach. TCC 1 presented, TCC 2 underway.",
@@ -68,10 +68,10 @@ export const journeyItems: JourneyItem[] = [
       },
       {
         id: "ic",
-        period: "2023 – 2025",
+        period: { en: "2023 to 2025", pt: "2023 a 2025" },
         title: {
-          en: "Scientific initiation — dose reference levels in pediatric CT",
-          pt: "Iniciação científica — níveis de dose de referência em TC pediátrica",
+          en: "Scientific initiation: dose reference levels in pediatric CT",
+          pt: "Iniciação científica: níveis de dose de referência em TC pediátrica",
         },
         text: {
           en: "Research project “Análise dos níveis de dose de referência em TC pediátrica”, supervised by Mirko Alva Sánchez. It resulted in a co-authored article published in Radiation Measurements (2024):",
@@ -81,10 +81,10 @@ export const journeyItems: JourneyItem[] = [
       },
       {
         id: "pid",
-        period: "2023 – 2025",
+        period: { en: "2023 to 2025", pt: "2023 a 2025" },
         title: {
-          en: "Teaching Initiation Project (PID) — PodRadiation",
-          pt: "Projeto de Iniciação à Docência (PID) — PodRadiation",
+          en: "Teaching Initiation Project (PID): PodRadiation",
+          pt: "Projeto de Iniciação à Docência (PID): PodRadiation",
         },
         text: {
           en: "Coordinator of PodRadiation, a podcast bringing radiation and radiological protection topics to the academic community and the general public.",
@@ -95,10 +95,10 @@ export const journeyItems: JourneyItem[] = [
   },
   {
     id: "intern",
-    period: { en: "2023 – 2024", pt: "2023 – 2024" },
+    period: { en: "2023 to 2024", pt: "2023 a 2024" },
     institution: {
-      en: "CEVS — State Center for Health Surveillance",
-      pt: "CEVS — Centro Estadual de Vigilância em Saúde",
+      en: "CEVS, State Center for Health Surveillance",
+      pt: "CEVS, Centro Estadual de Vigilância em Saúde",
     },
     role: { en: "Internship", pt: "Estágio" },
     summary: {
@@ -112,15 +112,15 @@ export const journeyItems: JourneyItem[] = [
   },
   {
     id: "school",
-    period: { en: "2017 – 2020", pt: "2017 – 2020" },
+    period: { en: "2017 to 2020", pt: "2017 a 2020" },
     institution: { en: "Colégio Helyos", pt: "Colégio Helyos" },
     role: { en: "High-School Student", pt: "Ensino Médio" },
     summary: {
-      en: "Bilingual education with strong academic English — TOEFL, Cambridge and SAT prep at a nationally top-ranked school.",
-      pt: "Educação bilíngue com inglês acadêmico forte — preparação para TOEFL, Cambridge e SAT em escola ranqueada nacionalmente.",
+      en: "Bilingual education with strong academic English: TOEFL, Cambridge and SAT prep at a nationally top-ranked school.",
+      pt: "Educação bilíngue com inglês acadêmico forte: preparação para TOEFL, Cambridge e SAT em escola ranqueada nacionalmente.",
     },
     detail: {
-      en: "I graduated from a bilingual school — the same school I attended throughout my life — with long-term exposure to the English language and culture. I regularly took TOEFL, Cambridge and SAT mock exams, which strengthened my fluency and academic English. The institution is well-recognized locally and nationally, ranking 31st in Brazil in 2014.",
+      en: "I graduated from a bilingual school, the same one I attended throughout my life, with long-term exposure to the English language and culture. I regularly took TOEFL, Cambridge and SAT mock exams, which strengthened my fluency and academic English. The institution is well-recognized locally and nationally, ranking 31st in Brazil in 2014.",
       pt: "Me graduei em uma escola bilíngue com contato contínuo com a língua e a cultura inglesa. Realizei simulados de TOEFL, Cambridge e SAT, o que fortaleceu minha fluência e o inglês acadêmico. A instituição é reconhecida na cidade, no estado e no país, tendo ficado em 31º lugar nacional em 2014.",
     },
   },

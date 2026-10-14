@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "404 — Felipe Borges",
+  title: "404 | Felipe Borges",
 };
 
 // The root layout lives in app/[lang], so unmatched URLs render this page.

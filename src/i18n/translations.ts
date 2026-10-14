@@ -2,12 +2,12 @@ export const translations = {
   en: {
     // METADATA (title, description, OpenGraph / Twitter)
     meta: {
-      title: "Felipe Borges — Deep Learning, Data Science & Software",
+      title: "Felipe Borges | Deep Learning, Data Science & Software",
       description:
-        "Portfolio of Felipe Borges: deep learning and data science with a Medical Physics background — undergraduate thesis on PCOS detection in ultrasound, machine learning projects and full-stack software.",
+        "Portfolio of Felipe Borges: deep learning and data science with a Medical Physics background. Undergraduate thesis on PCOS detection in ultrasound, machine learning projects and full-stack software.",
       ogTagline: "Deep Learning · Data Science · Software",
       ogSubtitle: "Medical Physics, UFCSPA",
-      pcosTitle: "Deep Learning Generalization for PCOS Detection — Felipe Borges",
+      pcosTitle: "Deep Learning Generalization for PCOS Detection | Felipe Borges",
       pcosDescription:
         "Undergraduate thesis in progress: a ResNet-50 for PCOS detection in ultrasound images, evaluated on public datasets from different sources, with federated learning (Flower, FedAvg vs. FedProx) as the next step.",
     },
@@ -33,9 +33,9 @@ export const translations = {
       eyebrow: "Deep Learning · Data Science · Software",
       title: "Hi, I’m Felipe Borges",
       subtitle:
-        "Final-year Medical Physics student at UFCSPA, expected to graduate in {graduation}. I build and evaluate machine learning models — with a focus on deep learning for medical imaging — and ship full-stack software.",
+        "Final-year Medical Physics student at UFCSPA, expected to graduate in {graduation}. I build and evaluate machine learning models, with a focus on deep learning for medical imaging, and I also ship full-stack software.",
       subtitleGraduated:
-        "B.Sc. in Medical Physics from UFCSPA ({graduation}). I build and evaluate machine learning models — with a focus on deep learning for medical imaging — and ship full-stack software.",
+        "B.Sc. in Medical Physics from UFCSPA ({graduation}). I build and evaluate machine learning models, with a focus on deep learning for medical imaging, and I also ship full-stack software.",
       availability: "Available now for junior roles in data science, machine learning and software development.",
       ctaContact: "Contact Me",
       ctaProjects: "View Projects",
@@ -66,6 +66,7 @@ export const translations = {
       details: "Details",
       enlarge: "Enlarge screenshot of",
       close: "Close image",
+      closeDialog: "Close",
     },
 
     // SKILLS
@@ -74,7 +75,7 @@ export const translations = {
       title: "Technical",
       highlight: "Skills",
       description:
-        "Core tools for data science, machine learning, and full-stack engineering — each with where I applied it.",
+        "Core tools for data science, machine learning, and full-stack engineering, each with where I applied it.",
       groups: {
         dataml: "Data Science & ML",
         softwareeng: "Software Engineering",
@@ -135,12 +136,12 @@ export const translations = {
     contact: {
       heading: "Get in Touch",
       title: "Let's Connect",
-      p: "Available now for junior roles in data science, machine learning and software development — remote, hybrid or on-site.",
+      p: "Available now for junior roles in data science, machine learning and software development. Remote, hybrid or on-site.",
       email: "Email",
       whatsapp: "WhatsApp",
       location: "Location",
-      city: "Porto Alegre, RS – Brazil",
-      foot: "Usually replies within 24 hours — feel free to reach out anytime.",
+      city: "Porto Alegre, RS, Brazil",
+      foot: "I usually reply within 24 hours. Feel free to reach out anytime.",
       form: {
         name: "Name",
         namePlaceholder: "Your name",
@@ -169,12 +170,12 @@ export const translations = {
   pt: {
     // METADATA (title, description, OpenGraph / Twitter)
     meta: {
-      title: "Felipe Borges — Deep Learning, Ciência de Dados e Software",
+      title: "Felipe Borges | Deep Learning, Ciência de Dados e Software",
       description:
-        "Portfólio de Felipe Borges: deep learning e ciência de dados com formação em Física Médica — TCC sobre detecção de PCOS em ultrassom, projetos de machine learning e software full-stack.",
+        "Portfólio de Felipe Borges: deep learning e ciência de dados com formação em Física Médica. TCC sobre detecção de PCOS em ultrassom, projetos de machine learning e software full-stack.",
       ogTagline: "Deep Learning · Ciência de Dados · Software",
       ogSubtitle: "Física Médica, UFCSPA",
-      pcosTitle: "Generalização de Deep Learning na Detecção de PCOS — Felipe Borges",
+      pcosTitle: "Generalização de Deep Learning na Detecção de PCOS | Felipe Borges",
       pcosDescription:
         "TCC em andamento: uma ResNet-50 para detecção de PCOS em imagens de ultrassom, avaliada em bases públicas de fontes distintas, com aprendizado federado (Flower, FedAvg vs. FedProx) como próxima etapa.",
     },
@@ -200,9 +201,9 @@ export const translations = {
       eyebrow: "Deep Learning · Ciência de Dados · Software",
       title: "Olá, eu sou Felipe Borges",
       subtitle:
-        "Formando em Física Médica na UFCSPA, com conclusão prevista para {graduation}. Construo e avalio modelos de machine learning — com foco em deep learning para imagem médica — e desenvolvo software full-stack.",
+        "Formando em Física Médica na UFCSPA, com conclusão prevista para {graduation}. Construo e avalio modelos de machine learning, com foco em deep learning para imagem médica, e também desenvolvo software full-stack.",
       subtitleGraduated:
-        "Bacharel em Física Médica pela UFCSPA ({graduation}). Construo e avalio modelos de machine learning — com foco em deep learning para imagem médica — e desenvolvo software full-stack.",
+        "Bacharel em Física Médica pela UFCSPA ({graduation}). Construo e avalio modelos de machine learning, com foco em deep learning para imagem médica, e também desenvolvo software full-stack.",
       availability: "Disponível agora para vagas júnior em ciência de dados, machine learning e desenvolvimento de software.",
       ctaContact: "Fale Comigo",
       ctaProjects: "Ver Projetos",
@@ -233,6 +234,7 @@ export const translations = {
       details: "Ver detalhes",
       enlarge: "Ampliar imagem de",
       close: "Fechar imagem",
+      closeDialog: "Fechar",
     },
 
     // SKILLS
@@ -241,7 +243,7 @@ export const translations = {
       title: "Habilidades",
       highlight: "Técnicas",
       description:
-        "Ferramentas centrais para ciência de dados, machine learning e engenharia full-stack — cada uma com onde a apliquei.",
+        "Ferramentas centrais para ciência de dados, machine learning e engenharia full-stack, cada uma com onde a apliquei.",
       groups: {
         dataml: "Ciência de Dados & ML",
         softwareeng: "Engenharia de Software",
@@ -302,12 +304,12 @@ export const translations = {
     contact: {
       heading: "Entre em Contato",
       title: "Vamos Conversar",
-      p: "Disponível agora para vagas júnior em ciência de dados, machine learning e desenvolvimento de software — remoto, híbrido ou presencial.",
+      p: "Disponível agora para vagas júnior em ciência de dados, machine learning e desenvolvimento de software. Remoto, híbrido ou presencial.",
       email: "Email",
       whatsapp: "WhatsApp",
       location: "Localização",
-      city: "Porto Alegre, RS – Brasil",
-      foot: "Normalmente respondo em até 24 horas — chame quando quiser.",
+      city: "Porto Alegre, RS, Brasil",
+      foot: "Normalmente respondo em até 24 horas. Chame quando quiser.",
       form: {
         name: "Nome",
         namePlaceholder: "Seu nome",

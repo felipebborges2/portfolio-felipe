@@ -2,7 +2,7 @@ import { ImageResponse } from "next/og";
 import { translations } from "@/i18n/translations";
 import { LANGS, isLang } from "@/i18n/paths";
 
-export const alt = "Felipe Borges — Deep Learning · Data Science · Software";
+export const alt = "Felipe Borges: Deep Learning · Data Science · Software";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 

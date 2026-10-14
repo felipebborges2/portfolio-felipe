@@ -73,7 +73,7 @@ export default function Journey() {
                             return (
                             <li key={a.id}>
                               {a.period && (
-                                <p className="text-xs font-semibold text-accent-fg">{a.period}</p>
+                                <p className="text-xs font-semibold text-accent-fg">{a.period[lang]}</p>
                               )}
                               <p className="text-sm font-medium text-white">{a.title[lang]}</p>
                               <p className="text-sm text-[#9b9b9b] leading-relaxed">{a.text[lang]}</p>

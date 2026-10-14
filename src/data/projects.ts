@@ -48,8 +48,8 @@ export const projects: Project[] = [
       pt: "TCC · Física Médica · UFCSPA",
     },
     status: {
-      en: "In progress — TCC 1 presented, TCC 2 underway",
-      pt: "Em andamento — TCC 1 apresentado, TCC 2 em execução",
+      en: "In progress: TCC 1 presented, TCC 2 underway",
+      pt: "Em andamento: TCC 1 apresentado, TCC 2 em execução",
     },
     tags: [
       "Deep Learning",
@@ -103,7 +103,7 @@ export const projects: Project[] = [
         approach:
           "On the Breast Cancer Wisconsin Diagnostic dataset (569 samples, 30 numeric features), compared Logistic Regression, Random Forest and SVM using preprocessing pipelines and GridSearchCV, with feature-importance analysis and SHAP on the Random Forest.",
         result:
-          "A reproducible pipeline from exploration to model comparison and explainability, with CSV-based inference on new tabular samples. Educational — not for clinical use.",
+          "A reproducible pipeline from exploration to model comparison and explainability, with CSV-based inference on new tabular samples. Educational project, not for clinical use.",
       },
       pt: {
         problem:
@@ -111,7 +111,7 @@ export const projects: Project[] = [
         approach:
           "Com o Breast Cancer Wisconsin Diagnostic (569 amostras, 30 características numéricas), comparei Regressão Logística, Random Forest e SVM usando pipelines de pré-processamento e GridSearchCV, com análise de importância das características e SHAP no Random Forest.",
         result:
-          "Um pipeline reprodutível da exploração à comparação de modelos e explicabilidade, com inferência por CSV em novas amostras tabulares. Projeto educacional — sem uso clínico.",
+          "Um pipeline reprodutível da exploração à comparação de modelos e explicabilidade, com inferência por CSV em novas amostras tabulares. Projeto educacional, sem uso clínico.",
       },
     },
   },
@@ -139,7 +139,7 @@ export const projects: Project[] = [
         approach:
           "Built a full-stack Next.js app that sends user preferences to the OpenAI API and structures the response into a day-by-day itinerary, with a typed API layer end to end.",
         result:
-          "Shipped to production on Vercel — turns a short preference form into a complete, personalized itinerary in seconds.",
+          "Shipped to production on Vercel. It turns a short preference form into a complete, personalized itinerary in seconds.",
       },
       pt: {
         problem:
@@ -147,7 +147,7 @@ export const projects: Project[] = [
         approach:
           "Construí uma aplicação full-stack em Next.js que envia as preferências do usuário para a API da OpenAI e estrutura a resposta em um roteiro dia a dia, com uma camada de API tipada de ponta a ponta.",
         result:
-          "Publicado em produção na Vercel — transforma um formulário curto de preferências em um roteiro completo e personalizado em segundos.",
+          "Publicado em produção na Vercel. Transforma um formulário curto de preferências em um roteiro completo e personalizado em segundos.",
       },
     },
   },
@@ -173,7 +173,7 @@ export const projects: Project[] = [
         problem:
           "Researching European destinations usually means scattered, ad-heavy sites instead of a clean, city-by-city view.",
         approach:
-          "Built a lightweight, responsive guide in vanilla JavaScript, HTML and CSS — no framework overhead, focused on fast load times.",
+          "Built a lightweight, responsive guide in vanilla JavaScript, HTML and CSS, with no framework overhead and a focus on fast load times.",
         result:
           "A fast, fully static reference site deployed on Vercel, built as a hands-on exercise in DOM manipulation and UI fundamentals.",
       },
@@ -181,7 +181,7 @@ export const projects: Project[] = [
         problem:
           "Pesquisar destinos europeus normalmente significa sites cheios de anúncios e informação espalhada, em vez de uma visão limpa por cidade.",
         approach:
-          "Construí um guia leve e responsivo em JavaScript, HTML e CSS puros — sem framework, focado em carregamento rápido.",
+          "Construí um guia leve e responsivo em JavaScript, HTML e CSS puros, sem framework e focado em carregamento rápido.",
         result:
           "Um site de referência estático e rápido, publicado na Vercel, como exercício prático de manipulação de DOM e fundamentos de UI.",
       },
@@ -207,7 +207,7 @@ export const projects: Project[] = [
     content: {
       en: {
         problem:
-          "NBA fans want a fast way to browse team identity — colors, logos, rosters — without a cluttered, stats-heavy dashboard.",
+          "NBA fans want a fast way to browse team identity (colors, logos, rosters) without a cluttered, stats-heavy dashboard.",
         approach:
           "Built a React/Next.js/TypeScript app with a strong UI/UX focus, structuring team and player data into a clean, navigable interface.",
         result:
@@ -215,7 +215,7 @@ export const projects: Project[] = [
       },
       pt: {
         problem:
-          "Torcedores da NBA querem uma forma rápida de explorar a identidade dos times — cores, logos, elenco — sem um painel cheio de estatísticas.",
+          "Torcedores da NBA querem uma forma rápida de explorar a identidade dos times (cores, logos, elenco) sem um painel cheio de estatísticas.",
         approach:
           "Construí uma aplicação em React/Next.js/TypeScript com foco forte em UI/UX, organizando dados de times e jogadores em uma interface limpa e navegável.",
         result:

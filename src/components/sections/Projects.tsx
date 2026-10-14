@@ -1,18 +1,22 @@
 "use client";
-import { useState } from "react";
+import { useCallback, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight, ExternalLink, Github } from "lucide-react";
 import AnimatedCard from "@/components/AnimatedCard";
 import Lightbox from "@/components/Lightbox";
+import ProjectDialog from "@/components/ProjectDialog";
 import { useI18n } from "@/i18n/I18nProvider";
-import { projects } from "@/data/projects";
+import { projects, type Project } from "@/data/projects";
 import SectionHeading from "@/components/SectionHeading";
 import { localize } from "@/data/shared";
 
 export default function Projects() {
   const { t, lang, href } = useI18n();
   const [selected, setSelected] = useState<{ src: string; width: number; height: number; alt: string } | null>(null);
+  const [openProject, setOpenProject] = useState<Project | null>(null);
+  const closeProject = useCallback(() => setOpenProject(null), []);
+  const closeImage = useCallback(() => setSelected(null), []);
 
   return (
     <section id="projects" className="section flex flex-col items-center text-center">
@@ -84,21 +88,44 @@ export default function Projects() {
                   <dt className="uppercase tracking-wide text-[10px] text-[#9b9b9b] font-semibold">
                     {t("projects.problemLabel")}
                   </dt>
-                  <dd className="text-[#9b9b9b] leading-relaxed line-clamp-2">{content.problem}</dd>
+                  <dd className="text-[#9b9b9b] leading-relaxed line-clamp-3">{content.problem}</dd>
                 </div>
                 <div>
                   <dt className="uppercase tracking-wide text-[10px] text-[#9b9b9b] font-semibold">
                     {t("projects.approachLabel")}
                   </dt>
-                  <dd className="text-[#9b9b9b] leading-relaxed line-clamp-2">{content.approach}</dd>
+                  <dd className="text-[#9b9b9b] leading-relaxed line-clamp-3">{content.approach}</dd>
                 </div>
                 <div>
                   <dt className="uppercase tracking-wide text-[10px] text-[#9b9b9b] font-semibold">
                     {t("projects.resultLabel")}
                   </dt>
-                  <dd className="text-[#9b9b9b] leading-relaxed line-clamp-2">{content.result}</dd>
+                  <dd className="text-[#9b9b9b] leading-relaxed line-clamp-3">{content.result}</dd>
                 </div>
               </dl>
+
+              {/* "Details" sits right under the truncated text: the TCC opens
+                  its own page, the other projects open a dialog with the
+                  full text. */}
+              {p.links.detail ? (
+                <Link
+                  href={href(p.links.detail)}
+                  className="inline-flex items-center gap-1 text-sm font-medium text-accent-fg hover:underline underline-offset-2"
+                >
+                  {t("projects.details")}
+                  <ArrowRight className="w-3.5 h-3.5" aria-hidden="true" />
+                </Link>
+              ) : (
+                <button
+                  type="button"
+                  onClick={() => setOpenProject(p)}
+                  aria-haspopup="dialog"
+                  className="inline-flex items-center gap-1 text-sm font-medium text-accent-fg hover:underline underline-offset-2"
+                >
+                  {t("projects.details")}
+                  <ArrowRight className="w-3.5 h-3.5" aria-hidden="true" />
+                </button>
+              )}
 
               <div className="flex flex-wrap gap-2">
                 {p.tags.map((tag) => {
@@ -116,42 +143,39 @@ export default function Projects() {
 
               {/* mt-auto pins the link row to the card's bottom edge, so
                   cards with shorter copy still line up across a row. */}
-              <div className="mt-auto pt-2 flex flex-wrap gap-3">
-                {p.links.detail && (
-                  <Link href={href(p.links.detail)} className="link-btn">
-                    <ArrowRight className="w-3.5 h-3.5" aria-hidden="true" />
-                    {t("projects.details")}
-                  </Link>
-                )}
-                {p.links.live && (
-                  <a
-                    href={p.links.live}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="link-btn"
-                  >
-                    <ExternalLink className="w-3.5 h-3.5" aria-hidden="true" />
-                    {t("projects.live")}
-                  </a>
-                )}
-                {p.links.repo && (
-                  <a
-                    href={p.links.repo}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="link-btn"
-                  >
-                    <Github className="w-3.5 h-3.5" aria-hidden="true" />
-                    {t("projects.github")}
-                  </a>
-                )}
-              </div>
+              {(p.links.live || p.links.repo) && (
+                <div className="mt-auto pt-2 flex flex-wrap gap-3">
+                  {p.links.live && (
+                    <a
+                      href={p.links.live}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="link-btn"
+                    >
+                      <ExternalLink className="w-3.5 h-3.5" aria-hidden="true" />
+                      {t("projects.live")}
+                    </a>
+                  )}
+                  {p.links.repo && (
+                    <a
+                      href={p.links.repo}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="link-btn"
+                    >
+                      <Github className="w-3.5 h-3.5" aria-hidden="true" />
+                      {t("projects.github")}
+                    </a>
+                  )}
+                </div>
+              )}
             </AnimatedCard>
           );
         })}
       </div>
+      {openProject && <ProjectDialog project={openProject} onClose={closeProject} />}
       {selected && (
-        <Lightbox {...selected} closeLabel={t("projects.close")} onClose={() => setSelected(null)} />
+        <Lightbox {...selected} closeLabel={t("projects.close")} onClose={closeImage} />
       )}
     </section>
   );

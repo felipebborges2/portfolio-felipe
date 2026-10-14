@@ -48,12 +48,12 @@ export const pcosDatasets: DatasetRow[] = [
 export const pcosDetail: Localized<PcosDetail> = {
   en: {
     title:
-      "Generalization of Deep Learning Models for PCOS Detection in Ultrasound Images — A Multi-Dataset Evaluation with a Federated Approach",
+      "Generalization of Deep Learning Models for PCOS Detection in Ultrasound Images: A Multi-Dataset Evaluation with a Federated Approach",
     problem:
-      "Deep learning models in medical imaging are almost always evaluated with internal validation only — test data drawn from the same source as the training data. That overestimates their real ability to generalize to images acquired elsewhere.",
+      "Deep learning models in medical imaging are almost always evaluated with internal validation only, using test data drawn from the same source as the training data. That overestimates their real ability to generalize to images acquired elsewhere.",
     approach: [
       "ResNet-50 pretrained on ImageNet, with full fine-tuning in PyTorch / torchvision.",
-      "An exploratory analysis of three public datasets came first. It found a source bias: in Figshare, there is a systematic resolution gap between classes — 718×608 px for “normal” images vs. 272×267 px for “PCOS” images — something a model could learn instead of the anatomy.",
+      "An exploratory analysis of three public datasets came first. It found a source bias: in Figshare, there is a systematic resolution gap between classes (718×608 px for “normal” images vs. 272×267 px for “PCOS” images), something a model could learn instead of the anatomy.",
       "Because of that, PCOSGen was chosen as the training base, and the other two datasets were reassigned to external validation.",
     ],
     training: [
@@ -75,12 +75,12 @@ export const pcosDetail: Localized<PcosDetail> = {
   },
   pt: {
     title:
-      "Generalização de Modelos de Deep Learning na Detecção de PCOS em Imagens de Ultrassom — Avaliação Multibase com Abordagem Federada",
+      "Generalização de Modelos de Deep Learning na Detecção de PCOS em Imagens de Ultrassom: Avaliação Multibase com Abordagem Federada",
     problem:
-      "Modelos de deep learning em imagem médica quase sempre são avaliados só por validação interna — dados de teste da mesma fonte do treino. Isso superestima a capacidade real de generalizar para imagens adquiridas em outros lugares.",
+      "Modelos de deep learning em imagem médica quase sempre são avaliados só por validação interna, com dados de teste da mesma fonte do treino. Isso superestima a capacidade real de generalizar para imagens adquiridas em outros lugares.",
     approach: [
       "ResNet-50 pré-treinada na ImageNet, com fine-tuning completo em PyTorch / torchvision.",
-      "Antes do treino, uma análise exploratória de três datasets públicos identificou viés de fonte: no Figshare há disparidade sistemática de resolução entre classes — 718×608 px nas imagens “normais” vs. 272×267 px nas “PCOS” — algo que um modelo poderia aprender no lugar da anatomia.",
+      "Antes do treino, uma análise exploratória de três datasets públicos identificou viés de fonte: no Figshare há disparidade sistemática de resolução entre classes (718×608 px nas imagens “normais” vs. 272×267 px nas “PCOS”), algo que um modelo poderia aprender no lugar da anatomia.",
       "Por isso o PCOSGen foi escolhido como base de treino, e os outros dois datasets foram realocados para validação externa.",
     ],
     training: [
