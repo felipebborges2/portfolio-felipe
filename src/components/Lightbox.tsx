@@ -1,14 +1,17 @@
 "use client";
 
 import { useEffect } from "react";
+import Image from "next/image";
 
 type Props = {
   src: string;
+  width: number;
+  height: number;
   alt?: string;
   onClose: () => void;
 };
 
-export default function Lightbox({ src, alt = "", onClose }: Props) {
+export default function Lightbox({ src, width, height, alt = "", onClose }: Props) {
   useEffect(() => {
     function onKey(e: KeyboardEvent) {
       if (e.key === "Escape") onClose();
@@ -32,11 +35,14 @@ export default function Lightbox({ src, alt = "", onClose }: Props) {
         >
           ✕
         </button>
-        <img
+        <Image
           src={src}
+          width={width}
+          height={height}
+          sizes="95vw"
           alt={alt}
           onClick={(e) => e.stopPropagation()}
-          className="max-w-full max-h-[80vh] rounded-md shadow-lg"
+          className="w-auto h-auto max-w-full max-h-[80vh] rounded-md shadow-lg"
         />
       </div>
     </div>

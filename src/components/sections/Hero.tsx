@@ -1,5 +1,6 @@
 "use client";
 import Reveal from "@/components/Reveal";
+import Image from "next/image";
 import { motion } from "framer-motion";
 import { Github, Linkedin, Mail } from "lucide-react";
 import { useI18n } from "@/i18n/I18nProvider"; // 👈 import adicionado
@@ -64,9 +65,12 @@ export default function Hero() {
             whileHover={{ scale: 1.08, boxShadow: "0 0 25px #9b2242" }}
             transition={{ type: "spring", stiffness: 300, damping: 15 }}
           >
-            {/* Coloque uma foto em /public/felipe.jpg */}
-            <img
+            <Image
               src="/felipe.jpeg"
+              width={2151}
+              height={2868}
+              sizes="(min-width: 768px) 224px, 176px"
+              priority
               alt="Felipe Borges"
               className="w-full h-full object-cover"
             />

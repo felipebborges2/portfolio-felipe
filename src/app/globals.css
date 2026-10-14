@@ -28,10 +28,6 @@ html, body {
     @apply container-p py-14 md:py-20;
   }
 
-  .card {
-    @apply rounded-2xl bg-[#151515] border border-[#1f1f1f] shadow-[0_8px_30px_rgba(0,0,0,0.25)];
-  }
-
   .btn {
     @apply inline-flex items-center gap-2 rounded-xl px-4 py-2 font-medium transition border border-transparent bg-white/5 hover:bg-white/10;
   }
@@ -42,7 +38,7 @@ html, body {
   }
 
   .link-subtle {
-    @apply text-[#f5f5f5] hover:text-[#f5f5f5] transition;
+    @apply text-[#f5f5f5] hover:text-white transition;
   }
 
   /* Small icon+label link, used for "Live" / "GitHub" on project cards. */

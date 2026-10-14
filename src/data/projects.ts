@@ -19,6 +19,8 @@ export type Project = {
   title: string;
   image: {
     src: string;
+    width: number;
+    height: number;
     alt: Localized<string>;
   };
   tags: string[];
@@ -37,6 +39,8 @@ export const projects: Project[] = [
     title: "OncoPredict",
     image: {
       src: "/projects/oncopredict.jpeg",
+      width: 1280,
+      height: 805,
       alt: {
         en: "Screenshot of the OncoPredict machine learning project",
         pt: "Captura de tela do projeto de machine learning OncoPredict",
@@ -69,6 +73,8 @@ export const projects: Project[] = [
     title: "AtlasMind",
     image: {
       src: "/projects/atlasmind.jpeg",
+      width: 2940,
+      height: 1850,
       alt: {
         en: "Screenshot of the AtlasMind travel planning app",
         pt: "Captura de tela do aplicativo de planejamento de viagens AtlasMind",
@@ -103,6 +109,8 @@ export const projects: Project[] = [
     title: "Europedia",
     image: {
       src: "/projects/europedia.jpeg",
+      width: 2940,
+      height: 1842,
       alt: {
         en: "Screenshot of the Europedia travel guide",
         pt: "Captura de tela do guia de viagens Europedia",
@@ -137,6 +145,8 @@ export const projects: Project[] = [
     title: "CourtView",
     image: {
       src: "/projects/courtview.jpeg",
+      width: 2940,
+      height: 1848,
       alt: {
         en: "Screenshot of the CourtView NBA explorer",
         pt: "Captura de tela do explorador de times CourtView",
@@ -171,6 +181,8 @@ export const projects: Project[] = [
     title: "FinZeit",
     image: {
       src: "/projects/finzeit.jpeg",
+      width: 2940,
+      height: 1844,
       alt: {
         en: "Screenshot of the FinZeit finance dashboard",
         pt: "Captura de tela do painel financeiro FinZeit",

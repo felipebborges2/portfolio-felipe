@@ -1,5 +1,6 @@
 "use client";
 import { useState } from "react";
+import Image from "next/image";
 import { ExternalLink, Github } from "lucide-react";
 import AnimatedCard from "@/components/AnimatedCard";
 import Lightbox from "@/components/Lightbox";
@@ -8,8 +9,7 @@ import { projects } from "@/data/projects";
 
 export default function Projects() {
   const { t, lang } = useI18n();
-  const [selectedImage, setSelectedImage] = useState<string | null>(null);
-  const [selectedAlt, setSelectedAlt] = useState<string>("");
+  const [selected, setSelected] = useState<{ src: string; width: number; height: number; alt: string } | null>(null);
 
   return (
     <section id="projects" className="section flex flex-col items-center text-center">
@@ -36,14 +36,14 @@ export default function Projects() {
               align="start"
               className="p-6 flex flex-col gap-3 w-full sm:w-[calc(50%-1rem)] lg:w-[calc(33.333%-1.334rem)]"
             >
-              <img
+              <Image
                 src={p.image.src}
+                width={p.image.width}
+                height={p.image.height}
+                sizes="(min-width: 1024px) 300px, (min-width: 640px) 50vw, 100vw"
                 alt={p.image.alt[lang]}
                 className="w-full h-40 object-cover rounded-md mb-1 cursor-pointer"
-                onClick={() => {
-                  setSelectedImage(p.image.src);
-                  setSelectedAlt(p.image.alt[lang]);
-                }}
+                onClick={() => setSelected({ ...p.image, alt: p.image.alt[lang] })}
               />
 
               <div className="flex items-center justify-between w-full gap-2">
@@ -115,13 +115,7 @@ export default function Projects() {
           );
         })}
       </div>
-      {selectedImage && (
-        <Lightbox
-          src={selectedImage}
-          alt={selectedAlt}
-          onClose={() => setSelectedImage(null)}
-        />
-      )}
+      {selected && <Lightbox {...selected} onClose={() => setSelected(null)} />}
     </section>
   );
 }

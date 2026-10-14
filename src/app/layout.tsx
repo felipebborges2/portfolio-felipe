@@ -6,11 +6,6 @@ export const metadata = {
   title: "Felipe Borges • Portfolio",
   description:
     "Data Science & Machine Learning practitioner with a Medical Physics foundation, building ML models and full-stack AI-powered products.",
-  icons: {
-    icon: "/newfavicon.ico",
-    shortcut: "/newfavicon.ico",
-    apple: "/newfavicon.ico",
-  },
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
