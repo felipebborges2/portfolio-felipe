@@ -1,11 +1,13 @@
 "use client";
 import { useState } from "react";
 import Image from "next/image";
-import { ExternalLink, Github } from "lucide-react";
+import Link from "next/link";
+import { ArrowRight, ExternalLink, Github } from "lucide-react";
 import AnimatedCard from "@/components/AnimatedCard";
 import Lightbox from "@/components/Lightbox";
 import { useI18n } from "@/i18n/I18nProvider";
 import { projects } from "@/data/projects";
+import { localize } from "@/data/shared";
 
 export default function Projects() {
   const { t, lang } = useI18n();
@@ -30,30 +32,49 @@ export default function Projects() {
       <div className="flex flex-wrap justify-center gap-8 max-w-5xl w-full">
         {projects.map((p) => {
           const content = p.content[lang];
+          const title = localize(p.title, lang);
           return (
             <AnimatedCard
               key={p.id}
               align="start"
               className="p-6 flex flex-col gap-3 w-full sm:w-[calc(50%-1rem)] lg:w-[calc(33.333%-1.334rem)]"
             >
-              <Image
-                src={p.image.src}
-                width={p.image.width}
-                height={p.image.height}
-                sizes="(min-width: 1024px) 300px, (min-width: 640px) 50vw, 100vw"
-                alt={p.image.alt[lang]}
-                className="w-full h-40 object-cover rounded-md mb-1 cursor-pointer"
-                onClick={() => setSelected({ ...p.image, alt: p.image.alt[lang] })}
-              />
+              {p.image ? (
+                <Image
+                  src={p.image.src}
+                  width={p.image.width}
+                  height={p.image.height}
+                  sizes="(min-width: 1024px) 300px, (min-width: 640px) 50vw, 100vw"
+                  alt={p.image.alt[lang]}
+                  className="w-full h-40 object-cover rounded-md mb-1 cursor-pointer"
+                  onClick={() => setSelected({ ...p.image!, alt: p.image!.alt[lang] })}
+                />
+              ) : (
+                // Typographic header, same footprint as a screenshot so
+                // cards stay aligned across the row. No invented imagery.
+                <div className="w-full h-40 rounded-md mb-1 border border-[#2a2a2a] bg-[#1a1a1a] p-4 flex flex-col justify-between">
+                  {p.eyebrow && (
+                    <p className="uppercase tracking-wide text-[11px] font-semibold text-[#9b9b9b]">
+                      {p.eyebrow[lang]}
+                    </p>
+                  )}
+                  <h3 className="text-xl font-semibold leading-snug text-white">{title}</h3>
+                </div>
+              )}
 
-              <div className="flex items-center justify-between w-full gap-2">
-                <h3 className="text-lg font-semibold text-white">{p.title}</h3>
-                {p.metric && (
-                  <span className="shrink-0 text-xs font-semibold text-[#9b2242] bg-[#9b2242]/10 border border-[#9b2242]/30 rounded-md px-2 py-1">
-                    {p.metric.label[lang]} {p.metric.value}
-                  </span>
-                )}
-              </div>
+              {p.image && p.eyebrow && (
+                <p className="uppercase tracking-wide text-[11px] font-semibold text-[#9b9b9b]">
+                  {p.eyebrow[lang]}
+                </p>
+              )}
+
+              {p.image && <h3 className="text-lg font-semibold text-white">{title}</h3>}
+
+              {p.status && (
+                <span className="text-xs font-semibold text-[#d0738d] bg-[#9b2242]/10 border border-[#9b2242]/30 rounded-md px-2 py-1">
+                  {p.status[lang]}
+                </span>
+              )}
 
               <dl className="text-sm space-y-2 w-full">
                 <div>
@@ -77,19 +98,28 @@ export default function Projects() {
               </dl>
 
               <div className="flex flex-wrap gap-2">
-                {p.tags.map((tag) => (
-                  <span
-                    key={tag}
-                    className="text-xs text-[#9b9b9b] bg-[#1f1f1f] rounded-md px-2 py-1"
-                  >
-                    {tag}
-                  </span>
-                ))}
+                {p.tags.map((tag) => {
+                  const label = localize(tag, lang);
+                  return (
+                    <span
+                      key={label}
+                      className="text-xs text-[#9b9b9b] bg-[#1f1f1f] rounded-md px-2 py-1"
+                    >
+                      {label}
+                    </span>
+                  );
+                })}
               </div>
 
               {/* mt-auto pins the link row to the card's bottom edge, so
                   cards with shorter copy still line up across a row. */}
-              <div className="mt-auto pt-2 flex gap-3">
+              <div className="mt-auto pt-2 flex flex-wrap gap-3">
+                {p.links.detail && (
+                  <Link href={p.links.detail} className="link-btn">
+                    <ArrowRight className="w-3.5 h-3.5" aria-hidden="true" />
+                    {t("projects.details")}
+                  </Link>
+                )}
                 {p.links.live && (
                   <a
                     href={p.links.live}
@@ -101,15 +131,17 @@ export default function Projects() {
                     {t("projects.live")}
                   </a>
                 )}
-                <a
-                  href={p.links.repo}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="link-btn"
-                >
-                  <Github className="w-3.5 h-3.5" aria-hidden="true" />
-                  {t("projects.github")}
-                </a>
+                {p.links.repo && (
+                  <a
+                    href={p.links.repo}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="link-btn"
+                  >
+                    <Github className="w-3.5 h-3.5" aria-hidden="true" />
+                    {t("projects.github")}
+                  </a>
+                )}
               </div>
             </AnimatedCard>
           );

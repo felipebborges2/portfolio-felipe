@@ -1,70 +1,117 @@
-import type { Localized } from "./shared";
-
-export type ProjectMetric = {
-  label: Localized<string>;
-  value: string;
-};
+import type { Localized, MaybeLocalized } from "./shared";
 
 export type ProjectContent = {
   /** What problem the project addresses. */
   problem: string;
   /** How it was built / the technical approach. */
   approach: string;
-  /** The outcome — what shipped, and the metric if one exists. */
+  /** The outcome in plain language. Numbers belong on the detail page, not here. */
   result: string;
 };
 
 export type Project = {
   id: string;
-  title: string;
-  image: {
+  title: MaybeLocalized;
+  /** Short context line shown above the title, e.g. "Undergraduate thesis". */
+  eyebrow?: Localized<string>;
+  /** Shown as a badge for work that is still ongoing. */
+  status?: Localized<string>;
+  /**
+   * Screenshot of the product. Optional: projects without a real, legible
+   * visual get a typographic card instead of a made-up image.
+   */
+  image?: {
     src: string;
     width: number;
     height: number;
     alt: Localized<string>;
   };
-  tags: string[];
+  tags: MaybeLocalized[];
   links: {
     live?: string;
-    repo: string;
+    repo?: string;
+    /** Internal detail page. */
+    detail?: string;
   };
-  /** Only set when there is a real, verifiable number to show. */
-  metric?: ProjectMetric;
   content: Localized<ProjectContent>;
 };
 
 export const projects: Project[] = [
   {
-    id: "oncopredict",
-    title: "OncoPredict",
-    image: {
-      src: "/projects/oncopredict.jpeg",
-      width: 1280,
-      height: 805,
-      alt: {
-        en: "Screenshot of the OncoPredict machine learning project",
-        pt: "Captura de tela do projeto de machine learning OncoPredict",
-      },
+    id: "pcos-generalization",
+    title: {
+      en: "Deep Learning Generalization for PCOS Detection",
+      pt: "Generalização de Deep Learning na Detecção de PCOS",
     },
-    tags: ["Python", "Machine Learning", "scikit-learn", "Pandas", "NumPy"],
-    links: { repo: "https://github.com/felipebborges2/OncoPredict" },
-    metric: { label: { en: "AUC", pt: "AUC" }, value: "0.99" },
+    eyebrow: {
+      en: "Undergraduate thesis · UFCSPA",
+      pt: "TCC · Física Médica · UFCSPA",
+    },
+    status: {
+      en: "In progress — TCC 1 presented, TCC 2 underway",
+      pt: "Em andamento — TCC 1 apresentado, TCC 2 em execução",
+    },
+    tags: [
+      "Deep Learning",
+      "PyTorch",
+      "ResNet-50",
+      "Transfer Learning",
+      { en: "External Validation", pt: "Validação Externa" },
+      "Domain Shift",
+      "Federated Learning",
+      { en: "Medical Imaging", pt: "Imagem Médica" },
+    ],
+    links: { detail: "/projects/pcos-generalization" },
+    // No results of any kind until TCC 2 is complete (see src/data/pcos.ts).
     content: {
       en: {
         problem:
-          "Predicting tumor progression in acoustic neuroma patients from MRI radiomic features, to support earlier, data-driven decisions in a watch-and-wait clinical strategy.",
+          "Deep learning models in medical imaging are usually validated only on data from the same source they were trained on, which overestimates how well they generalize.",
         approach:
-          "Built a full ML pipeline in Python: radiomic feature engineering, then model comparison (SVM, Logistic Regression, Random Forest) with GridSearchCV and 5-fold cross-validation.",
+          "Fine-tuned an ImageNet-pretrained ResNet-50 in PyTorch to detect PCOS in ultrasound images, training on one public dataset and testing on two others from different sources.",
         result:
-          "Best model (linear-kernel SVM) reached 0.99 AUC and 98.2% accuracy, with a well-calibrated decision threshold (Youden index ≈ 0.51).",
+          "Results will be released after TCC 2 is complete.",
       },
       pt: {
         problem:
-          "Prever a progressão tumoral em pacientes com neurinoma do acústico a partir de características radiômicas de ressonância magnética, apoiando decisões mais embasadas em uma estratégia clínica de observação (watch-and-wait).",
+          "Modelos de deep learning em imagem médica costumam ser validados só com dados da mesma fonte do treino, o que superestima sua capacidade de generalização.",
         approach:
-          "Pipeline completo de ML em Python: engenharia de atributos radiômicos, seguida de comparação de modelos (SVM, Regressão Logística, Random Forest) com GridSearchCV e validação cruzada de 5 folds.",
+          "Fine-tuning de uma ResNet-50 pré-treinada na ImageNet, em PyTorch, para detectar PCOS em ultrassom: treino em uma base pública e teste em outras duas, de fontes distintas.",
         result:
-          "O melhor modelo (SVM com kernel linear) atingiu AUC de 0,99 e acurácia de 98,2%, com limiar de decisão bem calibrado (índice de Youden ≈ 0,51).",
+          "Os resultados serão divulgados após a conclusão do TCC 2.",
+      },
+    },
+  },
+  {
+    id: "oncopredict",
+    title: "OncoPredict",
+    eyebrow: {
+      en: "Educational ML project",
+      pt: "Projeto educacional de ML",
+    },
+    tags: ["Python", "scikit-learn", "Pandas", "NumPy", "SHAP", "Machine Learning"],
+    links: { repo: "https://github.com/felipebborges2/OncoPredict" },
+    // Deliberately no metrics or threshold/calibration claims until the
+    // evaluation issues in the OncoPredict repo are fixed.
+    // No image on purpose: public/projects/oncopredict.jpeg (an editor
+    // screenshot showing AUC values) is kept unused as a reference until it
+    // is replaced by an exported ROC curve.
+    content: {
+      en: {
+        problem:
+          "Practice a complete supervised ML workflow on a classic clinical tabular problem: classifying breast tumors as malignant or benign.",
+        approach:
+          "On the Breast Cancer Wisconsin Diagnostic dataset (569 samples, 30 numeric features), compared Logistic Regression, Random Forest and SVM using preprocessing pipelines and GridSearchCV, with feature-importance analysis and SHAP on the Random Forest.",
+        result:
+          "A reproducible pipeline from exploration to model comparison and explainability, with CSV-based inference on new tabular samples. Educational — not for clinical use.",
+      },
+      pt: {
+        problem:
+          "Praticar um fluxo completo de ML supervisionado em um problema clínico tabular clássico: classificar tumores de mama como malignos ou benignos.",
+        approach:
+          "Com o Breast Cancer Wisconsin Diagnostic (569 amostras, 30 características numéricas), comparei Regressão Logística, Random Forest e SVM usando pipelines de pré-processamento e GridSearchCV, com análise de importância das características e SHAP no Random Forest.",
+        result:
+          "Um pipeline reprodutível da exploração à comparação de modelos e explicabilidade, com inferência por CSV em novas amostras tabulares. Projeto educacional — sem uso clínico.",
       },
     },
   },

@@ -57,7 +57,7 @@ export default function AnimatedCard({
       />
 
       {/* conteúdo acima do brilho */}
-      <div className={`relative z-10 flex w-full flex-col gap-2 ${innerAlignClasses}`}>
+      <div className={`relative z-10 flex flex-1 w-full flex-col gap-2 ${innerAlignClasses}`}>
         {showDownloadIcon && (
           <Download className="w-5 h-5 text-white transition duration-300" />
         )}

@@ -16,9 +16,13 @@ export const translations = {
 
     // HERO
     hero: {
+      eyebrow: "Deep Learning · Data Science · Software",
       title: "Hi, I’m Felipe Borges",
       subtitle:
-        "Data Science & Machine Learning — I build ML models and AI-powered software, backed by a Medical Physics foundation in scientific rigor and real healthcare data.",
+        "Final-year Medical Physics student at UFCSPA, expected to graduate in {graduation}. I build and evaluate machine learning models — with a focus on deep learning for medical imaging — and ship full-stack software.",
+      subtitleGraduated:
+        "B.Sc. in Medical Physics from UFCSPA ({graduation}). I build and evaluate machine learning models — with a focus on deep learning for medical imaging — and ship full-stack software.",
+      availability: "Available now for junior roles in data science, machine learning and software development.",
       ctaContact: "Contact Me",
       ctaProjects: "View Projects",
     },
@@ -28,8 +32,9 @@ export const translations = {
       heading: "About",
       title: "About",
       highlight: "Me",
-      p1: "I build machine learning models and full-stack, AI-powered products — and I'm currently preparing my application for a Master's in Computer Science at UFRGS to go deeper into that path.",
-      p2: "That path started in Medical Physics at UFCSPA, turning MRI data into models that predict tumor progression under real clinical constraints — not toy datasets. It's the same rigor I bring to shipping software end-to-end today, from data pipeline to deployed product. I'm open to roles in data science, machine learning engineering, or full-stack development.",
+      p1: "I'm a final-year Medical Physics student at UFCSPA, expected to graduate in {graduation}. My focus is deep learning and data: my undergraduate thesis evaluates a ResNet-50 for PCOS detection in ultrasound images on datasets from sources other than the one it was trained on, and tests federated training as a next step.",
+      p1Graduated: "I hold a B.Sc. in Medical Physics from UFCSPA ({graduation}). My focus is deep learning and data: my undergraduate thesis evaluated a ResNet-50 for PCOS detection in ultrasound images on datasets from sources other than the one it was trained on, with federated training as a follow-up.",
+      p2: "Medical Physics is my domain edge: I know where medical data comes from, how it is acquired, and how it can mislead a model. I also build full-stack software end to end. On the academic side, I plan to apply to the Master's in Computer Science at UFRGS for the 2027/1 intake.",
       cvPt: "Download CV (Portuguese)",
       cvEn: "Download CV (English)",
     },
@@ -44,6 +49,7 @@ export const translations = {
       problemLabel: "Problem",
       approachLabel: "Approach",
       resultLabel: "Result",
+      details: "Details",
     },
 
     // SKILLS
@@ -52,17 +58,12 @@ export const translations = {
       title: "Technical",
       highlight: "Skills",
       description:
-        "Core tools for data science, machine learning, and full-stack engineering — grouped by how I actually use them.",
+        "Core tools for data science, machine learning, and full-stack engineering — each with where I applied it.",
       groups: {
         dataml: "Data Science & ML",
         softwareeng: "Software Engineering",
         datacloud: "Data & Cloud",
         tools: "Tools & Practices",
-      },
-      levels: {
-        advanced: "Advanced",
-        intermediate: "Intermediate",
-        familiar: "Familiar",
       },
     },
 
@@ -86,13 +87,38 @@ export const translations = {
       highlight: "Journey",
       readMore: "Read more",
       readLess: "Show less",
+      activities: "Academic activities",
+      viewProject: "View project",
+    },
+
+    // PUBLICATIONS
+    publications: {
+      title: "Publications",
+    },
+
+    // PROJECT DETAIL PAGE
+    projectDetail: {
+      back: "Back to projects",
+      expected: "Expected completion",
+      preliminary: "Work in progress. This page covers the problem and methodology; results will be released after TCC 2 is complete.",
+      problem: "Problem",
+      approach: "Approach",
+      datasets: "Datasets",
+      dataset: "Dataset",
+      role: "Role",
+      images: "Images",
+      training: "Training setup",
+      result: "Results",
+      limitations: "Limitations",
+      nextStep: "Next step (TCC 2)",
+      tags: "Topics",
     },
 
     // CONTACT
     contact: {
       heading: "Get in Touch",
       title: "Let's Connect",
-      p: "Open to remote, hybrid or on-site opportunities — internship, junior or full-stack positions.",
+      p: "Available now for junior roles in data science, machine learning and software development — remote, hybrid or on-site.",
       email: "Email",
       whatsapp: "WhatsApp",
       location: "Location",
@@ -133,9 +159,13 @@ export const translations = {
 
     // HERO
     hero: {
+      eyebrow: "Deep Learning · Ciência de Dados · Software",
       title: "Olá, eu sou Felipe Borges",
       subtitle:
-        "Ciência de Dados & Machine Learning — construo modelos de ML e software com IA, com uma base em Física Médica que traz rigor científico e experiência real com dados de saúde.",
+        "Formando em Física Médica na UFCSPA, com conclusão prevista para {graduation}. Construo e avalio modelos de machine learning — com foco em deep learning para imagem médica — e desenvolvo software full-stack.",
+      subtitleGraduated:
+        "Bacharel em Física Médica pela UFCSPA ({graduation}). Construo e avalio modelos de machine learning — com foco em deep learning para imagem médica — e desenvolvo software full-stack.",
+      availability: "Disponível agora para vagas júnior em ciência de dados, machine learning e desenvolvimento de software.",
       ctaContact: "Fale Comigo",
       ctaProjects: "Ver Projetos",
     },
@@ -145,8 +175,9 @@ export const translations = {
       heading: "Sobre",
       title: "Sobre",
       highlight: "Mim",
-      p1: "Construo modelos de machine learning e produtos full-stack com IA — e estou preparando minha candidatura para o Mestrado em Ciência da Computação na UFRGS para aprofundar esse caminho.",
-      p2: "Esse caminho começou na Física Médica, na UFCSPA, transformando dados de ressonância magnética em modelos que preveem progressão tumoral sob restrições clínicas reais — não datasets de brinquedo. É o mesmo rigor que hoje aplico para entregar software de ponta a ponta, do pipeline de dados ao produto em produção. Estou aberto a vagas em ciência de dados, engenharia de machine learning ou desenvolvimento full-stack.",
+      p1: "Sou formando em Física Médica na UFCSPA, com conclusão prevista para {graduation}. Meu foco é deep learning e dados: no TCC, avalio uma ResNet-50 para detecção de PCOS em ultrassom em bases de origem diferente da usada no treino, e testo o treinamento federado como próxima etapa.",
+      p1Graduated: "Sou bacharel em Física Médica pela UFCSPA ({graduation}). Meu foco é deep learning e dados: no TCC, avaliei uma ResNet-50 para detecção de PCOS em ultrassom em bases de origem diferente da usada no treino, com o treinamento federado como etapa seguinte.",
+      p2: "A Física Médica é meu diferencial de domínio: sei de onde vêm os dados médicos, como são adquiridos e como podem enganar um modelo. Também desenvolvo software full-stack de ponta a ponta. No plano acadêmico, pretendo me candidatar ao Mestrado em Ciência da Computação da UFRGS, com ingresso em 2027/1.",
       cvPt: "Baixar CV (Português)",
       cvEn: "Baixar CV (Inglês)",
     },
@@ -161,6 +192,7 @@ export const translations = {
       problemLabel: "Problema",
       approachLabel: "Abordagem",
       resultLabel: "Resultado",
+      details: "Ver detalhes",
     },
 
     // SKILLS
@@ -169,17 +201,12 @@ export const translations = {
       title: "Habilidades",
       highlight: "Técnicas",
       description:
-        "Ferramentas centrais para ciência de dados, machine learning e engenharia full-stack — agrupadas pela forma como uso cada uma.",
+        "Ferramentas centrais para ciência de dados, machine learning e engenharia full-stack — cada uma com onde a apliquei.",
       groups: {
         dataml: "Ciência de Dados & ML",
         softwareeng: "Engenharia de Software",
         datacloud: "Dados & Cloud",
         tools: "Ferramentas & Práticas",
-      },
-      levels: {
-        advanced: "Avançado",
-        intermediate: "Intermediário",
-        familiar: "Familiarizado",
       },
     },
 
@@ -203,13 +230,38 @@ export const translations = {
       highlight: "Jornada",
       readMore: "Ler mais",
       readLess: "Mostrar menos",
+      activities: "Atividades acadêmicas",
+      viewProject: "Ver projeto",
+    },
+
+    // PUBLICATIONS
+    publications: {
+      title: "Publicações",
+    },
+
+    // PROJECT DETAIL PAGE
+    projectDetail: {
+      back: "Voltar para projetos",
+      expected: "Conclusão prevista",
+      preliminary: "Trabalho em andamento. Esta página apresenta o problema e a metodologia; os resultados serão divulgados após a conclusão do TCC 2.",
+      problem: "Problema",
+      approach: "Abordagem",
+      datasets: "Bases de dados",
+      dataset: "Base",
+      role: "Função",
+      images: "Imagens",
+      training: "Configuração de treino",
+      result: "Resultados",
+      limitations: "Limitações",
+      nextStep: "Próxima etapa (TCC 2)",
+      tags: "Tópicos",
     },
 
     // CONTACT
     contact: {
       heading: "Entre em Contato",
       title: "Vamos Conversar",
-      p: "Aberto a oportunidades remotas, híbridas ou presenciais — estágios, vagas para desenvolvedores júnior ou full-stack.",
+      p: "Disponível agora para vagas júnior em ciência de dados, machine learning e desenvolvimento de software — remoto, híbrido ou presencial.",
       email: "Email",
       whatsapp: "WhatsApp",
       location: "Localização",

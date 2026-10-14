@@ -1,4 +1,17 @@
-import type { Localized } from "./shared";
+import type { Lang, Localized } from "./shared";
+import { formatGraduationShort, profile } from "./profile";
+
+export type JourneyActivity = {
+  id: string;
+  /** Years only, as documented — no invented months. */
+  period?: string;
+  title: Localized<string>;
+  /** Only confirmed facts — no invented periods or outcomes. */
+  text: Localized<string>;
+  href?: string;
+  /** Links a resulting publication (see src/data/publications.ts). */
+  publicationId?: string;
+};
 
 export type JourneyItem = {
   id: string;
@@ -9,25 +22,76 @@ export type JourneyItem = {
   summary: Localized<string>;
   /** Full text revealed on expand. */
   detail: Localized<string>;
+  /** Academic activities listed under the item, always visible. */
+  activities?: JourneyActivity[];
 };
+
+const graduated = profile.graduated;
+
+function ufcspaPeriod(lang: Lang): string {
+  const end = formatGraduationShort(lang);
+  if (graduated) return `2021 – ${end}`;
+  return lang === "pt" ? `2021 – ${end} (previsto)` : `2021 – ${end} (expected)`;
+}
 
 export const journeyItems: JourneyItem[] = [
   {
     id: "uni",
-    period: { en: "2021 – Current", pt: "2021 – Atual" },
+    period: { en: ufcspaPeriod("en"), pt: ufcspaPeriod("pt") },
     institution: {
       en: "UFCSPA — Federal University of Health Sciences of Porto Alegre",
       pt: "UFCSPA — Universidade Federal de Ciências da Saúde de Porto Alegre",
     },
-    role: { en: "Medical Physics Student", pt: "Graduando em Física Médica" },
+    role: graduated
+      ? { en: "B.Sc. in Medical Physics", pt: "Bacharel em Física Médica" }
+      : { en: "Medical Physics undergraduate (final year)", pt: "Formando em Física Médica" },
     summary: {
-      en: "Volunteer ML research predicting tumor progression from MRI data, plus dose-optimization and science outreach.",
-      pt: "Pesquisa voluntária em ML para prever progressão tumoral a partir de dados de ressonância, além de otimização de dose e divulgação científica.",
+      en: "Undergraduate thesis in deep learning for medical imaging, a scientific initiation in pediatric CT dosimetry with a published article, and coordination of a teaching-initiation podcast.",
+      pt: "TCC em deep learning para imagem médica, iniciação científica em dosimetria de TC pediátrica com artigo publicado e coordenação de um podcast de iniciação à docência.",
     },
     detail: {
-      en: "During my degree, I've been part of research projects aimed at optimizing medical imaging and radiation protection, including a scientific initiation focused on dose reduction in pediatric CT scans. I also participated in a teaching outreach project (PID), co-creating the PodRadiation podcast to make topics on radiation and radiological safety accessible to the academic community and the general public. Currently, I volunteer in a research project that develops and validates a machine-learning model based on MRI radiomic features to predict tumor progression in patients with acoustic neuroma under an initial watch-and-wait strategy. These experiences strengthened my skills in research, scientific communication, and problem-solving — the same analytical mindset I apply today in software development and data science.",
-      pt: "Durante a graduação, participei de projetos de pesquisa voltados à otimização de imagens médicas e proteção radiológica, incluindo uma iniciação científica focada na redução de dose em tomografias pediátricas. Também integrei um projeto de iniciação à docência (PID), co-criando o podcast PodRadiation para tornar acessíveis temas de radiação e segurança radiológica à comunidade acadêmica e ao público geral. Atualmente, sou voluntário em um projeto que desenvolve e valida um modelo de machine learning baseado em características radiômicas de ressonância magnética para prever a progressão tumoral em pacientes com neurinoma acústico em estratégia inicial de observação. Essas experiências fortaleceram minhas habilidades de pesquisa, comunicação científica e resolução de problemas — a mesma lógica analítica que hoje aplico no desenvolvimento de software e em ciência de dados.",
+      en: "During my degree, I've been part of research projects aimed at optimizing medical imaging and radiation protection. These experiences strengthened my skills in research, scientific communication, and problem-solving — the same analytical mindset I apply today in data science and software development.",
+      pt: "Durante a graduação, participei de projetos de pesquisa voltados à otimização de imagens médicas e proteção radiológica. Essas experiências fortaleceram minhas habilidades de pesquisa, comunicação científica e resolução de problemas — a mesma lógica analítica que hoje aplico em ciência de dados e desenvolvimento de software.",
     },
+    activities: [
+      {
+        id: "tcc",
+        title: {
+          en: "Undergraduate thesis (TCC) — deep learning generalization for PCOS detection",
+          pt: "TCC — generalização de deep learning na detecção de PCOS",
+        },
+        text: {
+          en: "ResNet-50 evaluated across ultrasound datasets from different sources, with a federated approach. TCC 1 presented, TCC 2 underway.",
+          pt: "ResNet-50 avaliada em bases de ultrassom de fontes distintas, com abordagem federada. TCC 1 apresentado, TCC 2 em execução.",
+        },
+        href: "/projects/pcos-generalization",
+      },
+      {
+        id: "ic",
+        period: "2023 – 2025",
+        title: {
+          en: "Scientific initiation — dose reference levels in pediatric CT",
+          pt: "Iniciação científica — níveis de dose de referência em TC pediátrica",
+        },
+        text: {
+          en: "Research project “Análise dos níveis de dose de referência em TC pediátrica”, supervised by Mirko Alva Sánchez. It resulted in a co-authored article published in Radiation Measurements (2024):",
+          pt: "Projeto “Análise dos níveis de dose de referência em TC pediátrica”, com orientação de Mirko Alva Sánchez. Resultou em coautoria de artigo publicado na Radiation Measurements (2024):",
+        },
+        publicationId: "radmeas-2024",
+      },
+      {
+        id: "pid",
+        period: "2023 – 2025",
+        title: {
+          en: "Teaching Initiation Project (PID) — PodRadiation",
+          pt: "Projeto de Iniciação à Docência (PID) — PodRadiation",
+        },
+        text: {
+          en: "Coordinator of PodRadiation, a podcast bringing radiation and radiological protection topics to the academic community and the general public.",
+          pt: "Coordenador do PodRadiation, podcast que leva temas de radiação e proteção radiológica à comunidade acadêmica e ao público geral.",
+        },
+      },
+    ],
   },
   {
     id: "intern",

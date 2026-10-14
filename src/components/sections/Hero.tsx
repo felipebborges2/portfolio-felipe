@@ -3,16 +3,24 @@ import Reveal from "@/components/Reveal";
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { Github, Linkedin, Mail } from "lucide-react";
-import { useI18n } from "@/i18n/I18nProvider"; // 👈 import adicionado
+import { useI18n } from "@/i18n/I18nProvider";
+import { formatGraduationLong, profile } from "@/data/profile";
 
 export default function Hero() {
-  const { t } = useI18n(); // 👈 acesso às traduções
+  const { t, lang } = useI18n();
+  const subtitle = t(profile.graduated ? "hero.subtitleGraduated" : "hero.subtitle").replace(
+    "{graduation}",
+    formatGraduationLong(lang)
+  );
 
   return (
     <section id="home" className="section pt-24 md:pt-28">
       <Reveal delay={0}>
         <div className="grid gap-10 md:grid-cols-2 items-center">
           <div className="space-y-6">
+            <p className="uppercase tracking-widest text-sm font-semibold text-[#d0738d]">
+              {t("hero.eyebrow")}
+            </p>
             <motion.h1
               className="text-4xl md:text-6xl font-extrabold tracking-tight"
               initial={{ opacity: 0, y: 10 }}
@@ -21,8 +29,11 @@ export default function Hero() {
               {t("hero.title")}
             </motion.h1>
 
-            <p className="text-[#9b9b9b] max-w-xl mt-2">
-              {t("hero.subtitle")}
+            <p className="text-[#b0b0b0] max-w-xl mt-2 leading-relaxed">{subtitle}</p>
+
+            <p className="inline-flex items-center gap-2 rounded-full border border-[#9b2242]/40 bg-[#9b2242]/10 px-3 py-1.5 text-sm text-white">
+              <span className="h-2 w-2 shrink-0 rounded-full bg-emerald-400" aria-hidden="true" />
+              {t("hero.availability")}
             </p>
 
             <div className="flex flex-wrap gap-3">

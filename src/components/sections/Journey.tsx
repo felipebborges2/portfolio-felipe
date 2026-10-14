@@ -1,8 +1,12 @@
 "use client";
 import { useState } from "react";
+import Link from "next/link";
+import { ArrowRight } from "lucide-react";
 import Reveal from "@/components/Reveal";
 import { useI18n } from "@/i18n/I18nProvider";
 import { journeyItems } from "@/data/journey";
+import { doiUrl, publications } from "@/data/publications";
+import PublicationTitle from "@/components/PublicationTitle";
 
 export default function Journey() {
   const { t, lang } = useI18n();
@@ -63,6 +67,47 @@ export default function Journey() {
                     <p className="text-[#9b9b9b] leading-relaxed text-sm">
                       {isOpen ? step.detail[lang] : step.summary[lang]}
                     </p>
+                    {step.activities && (
+                      <div className="mt-4">
+                        <p className="uppercase tracking-wide text-[11px] font-semibold text-[#9b9b9b]/80 mb-2">
+                          {t("journey.activities")}
+                        </p>
+                        <ul className="space-y-3 border-l border-[#2a2a2a] pl-4">
+                          {step.activities.map((a) => {
+                            const pub = publications.find((p) => p.id === a.publicationId);
+                            return (
+                            <li key={a.id}>
+                              {a.period && (
+                                <p className="text-xs font-semibold text-[#d0738d]">{a.period}</p>
+                              )}
+                              <p className="text-sm font-medium text-white">{a.title[lang]}</p>
+                              <p className="text-sm text-[#9b9b9b] leading-relaxed">{a.text[lang]}</p>
+                              {pub && (
+                                <a
+                                  href={doiUrl(pub.doi)}
+                                  target="_blank"
+                                  rel="noopener noreferrer"
+                                  lang="en"
+                                  className="mt-1 inline-block text-sm italic text-[#d0738d] underline-offset-2 hover:underline"
+                                >
+                                  <PublicationTitle pub={pub} />
+                                </a>
+                              )}
+                              {a.href && (
+                                <Link
+                                  href={a.href}
+                                  className="mt-1 inline-flex items-center gap-1 text-sm font-medium text-[#d0738d] hover:brightness-110 transition"
+                                >
+                                  {t("journey.viewProject")}
+                                  <ArrowRight className="w-3.5 h-3.5" aria-hidden="true" />
+                                </Link>
+                              )}
+                            </li>
+                            );
+                          })}
+                        </ul>
+                      </div>
+                    )}
                     <button
                       type="button"
                       onClick={() => toggle(step.id)}

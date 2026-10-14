@@ -1,34 +1,37 @@
 import type { Localized } from "./shared";
+import { projects } from "./projects";
 
 export type Highlight = {
-  value: string;
+  value: Localized<string>;
   label: Localized<string>;
 };
 
+const deployedCount = String(projects.filter((p) => p.links.live).length);
+
 export const highlights: Highlight[] = [
   {
-    value: "0.99 AUC",
+    value: { en: "Thesis", pt: "TCC" },
     label: {
-      en: "Best model in OncoPredict, an ML project predicting tumor progression from MRI data",
-      pt: "Melhor modelo do OncoPredict, projeto de ML para prever progressão tumoral a partir de dados de ressonância",
+      en: "Deep learning in medical imaging — how well a ResNet-50 generalizes to ultrasound data from other sources",
+      pt: "Deep learning em imagem médica — o quanto uma ResNet-50 generaliza para ultrassons de outras fontes",
     },
   },
   {
-    value: "5",
+    value: { en: deployedCount, pt: deployedCount },
     label: {
-      en: "Full-stack & ML products shipped — from AI travel planning to financial dashboards",
-      pt: "Produtos full-stack e de ML publicados — de planejamento de viagens com IA a painéis financeiros",
+      en: "Full-stack web products deployed to production, from AI travel planning to financial dashboards",
+      pt: "Produtos web full-stack em produção, de planejamento de viagens com IA a painéis financeiros",
     },
   },
   {
-    value: "UFCSPA",
+    value: { en: "UFCSPA", pt: "UFCSPA" },
     label: {
-      en: "Medical Physics foundation — real healthcare data and scientific rigor most developers don't have",
-      pt: "Base em Física Médica — rigor científico e experiência real com dados de saúde que a maioria dos devs não tem",
+      en: "Medical Physics foundation — scientific rigor and hands-on experience with healthcare data",
+      pt: "Base em Física Médica — rigor científico e experiência prática com dados de saúde",
     },
   },
   {
-    value: "4",
+    value: { en: "4", pt: "4" },
     label: {
       en: "Languages spoken — native Portuguese, fluent English, working Spanish, beginner German",
       pt: "Idiomas falados — português nativo, inglês fluente, espanhol intermediário, alemão iniciante",

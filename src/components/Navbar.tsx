@@ -5,12 +5,12 @@ import { Menu, X } from "lucide-react";
 import { useI18n } from "@/i18n/I18nProvider"; // 👈 import adicionado
 
 const items = [
-  { href: "#home", labelKey: "nav.home" },
-  { href: "#about", labelKey: "nav.about" },
-  { href: "#projects", labelKey: "nav.projects" },
-  { href: "#skills", labelKey: "nav.skills" },
-  { href: "#languages", labelKey: "nav.languages" },
-  { href: "#journey", labelKey: "nav.journey" },
+  { href: "/#home", labelKey: "nav.home" },
+  { href: "/#about", labelKey: "nav.about" },
+  { href: "/#projects", labelKey: "nav.projects" },
+  { href: "/#skills", labelKey: "nav.skills" },
+  { href: "/#languages", labelKey: "nav.languages" },
+  { href: "/#journey", labelKey: "nav.journey" },
 ];
 
 export default function Navbar() {
@@ -27,15 +27,15 @@ export default function Navbar() {
         {/* Navbar Desktop */}
         <nav className="hidden md:flex items-center gap-6 text-sm">
           {items.map((i) => (
-            <a key={i.href} href={i.href} className="link-subtle">
+            <Link key={i.href} href={i.href} className="link-subtle">
               {t(i.labelKey)} {/* 👈 traduz label */}
-            </a>
+            </Link>
           ))}
 
           {/* Botão principal */}
-          <a href="#contact" className="btn btn-accent">
+          <Link href="/#contact" className="btn btn-accent">
             {t("nav.contactMe")} {/* 👈 traduz "Contact Me" */}
-          </a>
+          </Link>
 
           {/* Switch de idioma estilo iPhone (EN à esquerda, PT à direita) */}
           <button
@@ -92,23 +92,23 @@ export default function Navbar() {
         <div id="mobile-menu" className="md:hidden border-t border-border bg-bg">
           <div className="container-p py-4 flex flex-col gap-3">
             {items.map((i) => (
-              <a
+              <Link
                 key={i.href}
                 href={i.href}
                 onClick={() => setOpen(false)}
                 className="link-subtle"
               >
                 {t(i.labelKey)} {/* 👈 traduz label */}
-              </a>
+              </Link>
             ))}
 
-            <a
-              href="#contact"
+            <Link
+              href="/#contact"
               onClick={() => setOpen(false)}
               className="btn btn-accent"
             >
               {t("nav.contactMe")}
-            </a>
+            </Link>
 
             {/* 👇 Botão de idioma no menu mobile */}
             <button

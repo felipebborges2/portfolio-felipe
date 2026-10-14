@@ -3,30 +3,11 @@ import { motion } from "framer-motion";
 import Reveal from "@/components/Reveal";
 import AnimatedCard from "@/components/AnimatedCard";
 import { useI18n } from "@/i18n/I18nProvider";
-import { skillGroups, type SkillLevel } from "@/data/skills";
-
-const LEVEL_DOTS: Record<SkillLevel, number> = {
-  advanced: 3,
-  intermediate: 2,
-  familiar: 1,
-};
-
-function LevelMeter({ level }: { level: SkillLevel }) {
-  const filled = LEVEL_DOTS[level];
-  return (
-    <span className="flex items-center gap-0.5" aria-hidden="true">
-      {[1, 2, 3].map((dot) => (
-        <span
-          key={dot}
-          className={`h-1.5 w-1.5 rounded-full ${dot <= filled ? "bg-[#9b2242]" : "bg-[#2a2a2a]"}`}
-        />
-      ))}
-    </span>
-  );
-}
+import { skillGroups } from "@/data/skills";
+import { localize } from "@/data/shared";
 
 export default function Skills() {
-  const { t } = useI18n();
+  const { t, lang } = useI18n();
 
   return (
     <section
@@ -70,17 +51,16 @@ export default function Skills() {
                 <ul className="flex flex-col gap-2">
                   {group.skills.map((skill) => (
                     <li
-                      key={skill.name}
-                      className="flex items-center justify-between gap-3 bg-[#1f1f1f] text-sm px-3 py-2 rounded-md border border-[#2a2a2a] hover:border-[#9b2242] transition"
-                      title={t(`skills.levels.${skill.level}`)}
+                      key={localize(skill.name, lang)}
+                      className="bg-[#1f1f1f] text-sm px-3 py-2 rounded-md border border-[#2a2a2a] hover:border-[#9b2242] transition"
                     >
-                      <span className="text-white">{skill.name}</span>
-                      <span className="flex items-center gap-1.5 shrink-0">
-                        <span className="text-[10px] uppercase tracking-wide text-[#9b9b9b]">
-                          {t(`skills.levels.${skill.level}`)}
+                      <span className="text-white">{localize(skill.name, lang)}</span>
+                      {/* Where it was applied — shown only when documented. */}
+                      {skill.context && (
+                        <span className="block text-xs text-[#9b9b9b] leading-snug mt-0.5">
+                          {skill.context[lang]}
                         </span>
-                        <LevelMeter level={skill.level} />
-                      </span>
+                      )}
                     </li>
                   ))}
                 </ul>
