@@ -56,6 +56,7 @@ src/
       not-found.tsx               localized 404 page
       opengraph-image.tsx         generated OpenGraph card per language
     global-not-found.tsx          last-resort 404
+  proxy.ts                        root URLs → English tree (route-only rewrite)
     robots.ts, sitemap.ts, favicon.ico, globals.css
   components/                     shared components and page sections
   data/                           typed content (see below)
@@ -83,7 +84,8 @@ language is a `Localized<T>` (`{ en, pt }`).
 
 - English is served at the root (`/`, `/projects/…`); Portuguese under `/pt`
   (`/pt`, `/pt/projects/…`). Both are rendered from `src/app/[lang]`;
-  `next.config.ts` rewrites root URLs to the `en` tree.
+  `src/proxy.ts` rewrites root URLs to the `en` tree. It only maps routes:
+  no language detection, no cookies.
 - UI strings live in `src/i18n/translations.ts`; content strings live in
   `src/data`. Every user-facing string exists in both languages.
 - Components read the language with `useI18n()`, which provides `t(key)`,
