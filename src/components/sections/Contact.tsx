@@ -2,6 +2,7 @@
 import { useState } from "react";
 import { Mail, Phone, MapPin, Send } from "lucide-react";
 import { motion } from "framer-motion";
+import SectionHeading from "@/components/SectionHeading";
 import { useI18n } from "@/i18n/I18nProvider";
 
 const CONTACT_EMAIL = "fisfelipeborges@gmail.com";
@@ -45,23 +46,11 @@ export default function Contact() {
       id="contact"
       className="section flex flex-col items-center text-center"
     >
-      <motion.div
-        initial={{ opacity: 0, y: 10 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8 }}
-        viewport={{ once: true }}
-        className="mb-10"
-      >
-        <p className="uppercase tracking-widest text-[#9b9b9b] text-sm">
-          {t("contact.heading")}
-        </p>
-        <h2 className="text-3xl md:text-4xl font-semibold mt-2">
-          {t("contact.title")}
-        </h2>
-        <p className="text-[#9b9b9b] leading-relaxed mt-3 max-w-xl mx-auto">
-          {t("contact.p")}
-        </p>
-      </motion.div>
+      <SectionHeading
+        eyebrow={t("contact.heading")}
+        title={t("contact.title")}
+        description={t("contact.p")}
+      />
 
       <motion.form
         onSubmit={handleSubmit}
@@ -126,7 +115,7 @@ export default function Contact() {
         <p className="text-xs text-[#6b6b6b]">{t("contact.form.note")}</p>
       </motion.form>
 
-      <div className="mt-12 grid sm:grid-cols-3 gap-6 max-w-2xl w-full">
+      <div className="mt-12 grid sm:grid-cols-3 gap-3 sm:gap-6 max-w-2xl w-full">
         {quickLinks.map((item, i) => (
           <motion.a
             key={i}
@@ -138,7 +127,7 @@ export default function Contact() {
               boxShadow: "0 0 20px rgba(155, 34, 66, 0.2)",
             }}
             transition={{ type: "spring", stiffness: 300, damping: 20 }}
-            className="relative flex flex-col items-center gap-2 bg-[#151515] border border-[#1f1f1f] rounded-xl px-4 py-5 cursor-pointer group transition"
+            className="relative flex flex-row sm:flex-col items-center gap-3 sm:gap-2 text-left sm:text-center bg-[#151515] border border-[#1f1f1f] rounded-xl px-4 py-3 sm:py-5 cursor-pointer group transition"
           >
             {item.icon}
             <div>

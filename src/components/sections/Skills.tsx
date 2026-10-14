@@ -4,6 +4,7 @@ import Reveal from "@/components/Reveal";
 import AnimatedCard from "@/components/AnimatedCard";
 import { useI18n } from "@/i18n/I18nProvider";
 import { skillGroups } from "@/data/skills";
+import SectionHeading from "@/components/SectionHeading";
 import { localize } from "@/data/shared";
 
 export default function Skills() {
@@ -14,23 +15,15 @@ export default function Skills() {
       id="skills"
       className="section flex flex-col items-center text-center"
     >
-      <Reveal>
-        <div className="mb-10">
-          <p className="uppercase tracking-widest text-[#9b9b9b] text-sm">
-            {t("skills.heading")}
-          </p>
-          <h2 className="text-3xl md:text-4xl font-semibold mt-2">
-            {t("skills.title")}{" "}
-            <span className="text-[#9b2242]">{t("skills.highlight")}</span>
-          </h2>
-          <p className="text-[#9b9b9b] mt-3 text-sm md:text-base max-w-2xl">
-            {t("skills.description")}
-          </p>
-        </div>
-      </Reveal>
+      <SectionHeading
+        eyebrow={t("skills.heading")}
+        title={t("skills.title")}
+        highlight={t("skills.highlight")}
+        description={t("skills.description")}
+      />
 
       <Reveal delay={0.2}>
-        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl w-full items-stretch">
+        <div className="grid md:grid-cols-2 gap-6 max-w-5xl w-full items-stretch">
           {skillGroups.map((group, i) => (
             <AnimatedCard
               key={group.id}

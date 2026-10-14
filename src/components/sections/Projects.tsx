@@ -7,6 +7,7 @@ import AnimatedCard from "@/components/AnimatedCard";
 import Lightbox from "@/components/Lightbox";
 import { useI18n } from "@/i18n/I18nProvider";
 import { projects } from "@/data/projects";
+import SectionHeading from "@/components/SectionHeading";
 import { localize } from "@/data/shared";
 
 export default function Projects() {
@@ -15,15 +16,11 @@ export default function Projects() {
 
   return (
     <section id="projects" className="section flex flex-col items-center text-center">
-      <div className="mb-10">
-        <p className="uppercase tracking-widest text-[#9b9b9b] text-sm">
-          {t("projects.heading")}
-        </p>
-        <h2 className="text-3xl md:text-4xl font-semibold mt-2">
-          {t("projects.title")}{" "}
-          <span className="text-[#9b2242]">{t("projects.highlight")}</span>
-        </h2>
-      </div>
+      <SectionHeading
+        eyebrow={t("projects.heading")}
+        title={t("projects.title")}
+        highlight={t("projects.highlight")}
+      />
 
       {/*
         flex-wrap (not grid) so an incomplete last row centers itself

@@ -25,7 +25,7 @@ export default function Navbar() {
         </Link>
 
         {/* Navbar Desktop */}
-        <nav className="hidden md:flex items-center gap-6 text-sm">
+        <nav className="hidden lg:flex items-center gap-6 text-sm">
           {items.map((i) => (
             <Link key={i.href} href={i.href} className="link-subtle">
               {t(i.labelKey)} {/* 👈 traduz label */}
@@ -81,7 +81,7 @@ export default function Navbar() {
           aria-label={open ? t("nav.closeMenu") : t("nav.openMenu")}
           aria-expanded={open}
           aria-controls="mobile-menu"
-          className="md:hidden btn p-2"
+          className="lg:hidden btn p-2"
         >
           {open ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
         </button>
@@ -89,14 +89,14 @@ export default function Navbar() {
 
       {/* Dropdown Mobile */}
       {open && (
-        <div id="mobile-menu" className="md:hidden border-t border-border bg-bg">
-          <div className="container-p py-4 flex flex-col gap-3">
+        <div id="mobile-menu" className="lg:hidden border-t border-border bg-bg">
+          <div className="container-p py-3 flex flex-col gap-1">
             {items.map((i) => (
               <Link
                 key={i.href}
                 href={i.href}
                 onClick={() => setOpen(false)}
-                className="link-subtle"
+                className="link-subtle py-2"
               >
                 {t(i.labelKey)} {/* 👈 traduz label */}
               </Link>

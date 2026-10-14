@@ -1,6 +1,7 @@
 "use client";
 import { ExternalLink } from "lucide-react";
 import Reveal from "@/components/Reveal";
+import SectionHeading from "@/components/SectionHeading";
 import PublicationTitle from "@/components/PublicationTitle";
 import { useI18n } from "@/i18n/I18nProvider";
 import { doiUrl, publications } from "@/data/publications";
@@ -10,10 +11,10 @@ export default function Publications() {
 
   return (
     <section id="publications" className="section">
+      <SectionHeading eyebrow={t("publications.heading")} title={t("publications.title")} />
       <Reveal>
         <div className="mx-auto max-w-3xl">
-          <h2 className="text-2xl md:text-3xl font-semibold">{t("publications.title")}</h2>
-          <ol className="mt-6 space-y-6">
+          <ol className="space-y-6">
             {publications.map((pub) => (
               // References stay in English in both language versions.
               <li key={pub.id} lang="en" className="rounded-xl border border-[#1f1f1f] bg-[#151515] p-5">

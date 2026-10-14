@@ -29,7 +29,7 @@ export const translations = {
 
     // ABOUT
     about: {
-      heading: "About",
+      heading: "Who I am",
       title: "About",
       highlight: "Me",
       p1: "I'm a final-year Medical Physics student at UFCSPA, expected to graduate in {graduation}. My focus is deep learning and data: my undergraduate thesis evaluates a ResNet-50 for PCOS detection in ultrasound images on datasets from sources other than the one it was trained on, and tests federated training as a next step.",
@@ -93,6 +93,7 @@ export const translations = {
 
     // PUBLICATIONS
     publications: {
+      heading: "Peer-reviewed",
       title: "Publications",
     },
 
@@ -172,7 +173,7 @@ export const translations = {
 
     // ABOUT
     about: {
-      heading: "Sobre",
+      heading: "Quem sou",
       title: "Sobre",
       highlight: "Mim",
       p1: "Sou formando em Física Médica na UFCSPA, com conclusão prevista para {graduation}. Meu foco é deep learning e dados: no TCC, avalio uma ResNet-50 para detecção de PCOS em ultrassom em bases de origem diferente da usada no treino, e testo o treinamento federado como próxima etapa.",
@@ -236,6 +237,7 @@ export const translations = {
 
     // PUBLICATIONS
     publications: {
+      heading: "Revisado por pares",
       title: "Publicações",
     },
 

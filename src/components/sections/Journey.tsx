@@ -6,6 +6,7 @@ import Reveal from "@/components/Reveal";
 import { useI18n } from "@/i18n/I18nProvider";
 import { journeyItems } from "@/data/journey";
 import { doiUrl, publications } from "@/data/publications";
+import SectionHeading from "@/components/SectionHeading";
 import PublicationTitle from "@/components/PublicationTitle";
 
 export default function Journey() {
@@ -26,17 +27,11 @@ export default function Journey() {
       id="journey"
       className="section flex flex-col items-center text-center"
     >
-      <Reveal>
-        <div className="mb-10">
-          <p className="uppercase tracking-widest text-[#9b9b9b] text-sm">
-            {t("journey.heading")}
-          </p>
-          <h2 className="text-3xl md:text-4xl font-semibold">
-            {t("journey.title")}{" "}
-            <span className="text-[#9b2242]">{t("journey.highlight")}</span>
-          </h2>
-        </div>
-      </Reveal>
+      <SectionHeading
+        eyebrow={t("journey.heading")}
+        title={t("journey.title")}
+        highlight={t("journey.highlight")}
+      />
 
       <Reveal delay={0.2}>
         <div className="relative max-w-3xl w-full text-left">

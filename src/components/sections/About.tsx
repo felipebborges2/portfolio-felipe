@@ -3,6 +3,7 @@ import AnimatedCard from "@/components/AnimatedCard";
 import Reveal from "@/components/Reveal";
 import { useI18n } from "@/i18n/I18nProvider";
 import { highlights } from "@/data/about";
+import SectionHeading from "@/components/SectionHeading";
 import { formatGraduationLong, profile } from "@/data/profile";
 
 export default function About() {
@@ -14,16 +15,11 @@ export default function About() {
 
   return (
     <section id="about" className="section flex flex-col items-center text-center">
-      <Reveal>
-        <div className="mb-10">
-          <p className="uppercase tracking-widest text-[#9b9b9b] text-sm">
-            {t("about.heading")}
-          </p>
-          <h2 className="text-3xl md:text-4xl font-semibold">
-            {t("about.title")} <span className="text-[#9b2242]">{t("about.highlight")}</span>
-          </h2>
-        </div>
-      </Reveal>
+      <SectionHeading
+        eyebrow={t("about.heading")}
+        title={t("about.title")}
+        highlight={t("about.highlight")}
+      />
 
       <Reveal delay={0.2}>
         <div className="prose-measure text-left space-y-4">
@@ -50,13 +46,13 @@ export default function About() {
         curriculum-felipe-borges-en.pdf before the site is published.
       */}
       <Reveal delay={0.4}>
-        <div className="mt-10 flex flex-col sm:flex-row justify-center items-center gap-4">
+        <div className="mt-10 flex flex-col sm:flex-row justify-center items-stretch gap-4 w-full sm:w-auto">
           <AnimatedCard
             href="/curriculo-felipe-borges-pt.pdf"
             download
             showDownloadIcon
             label={t("about.cvPt")}
-            className="bg-[#9b2242] hover:brightness-110 text-white px-6 py-4 rounded-lg"
+            className="bg-[#9b2242] hover:brightness-110 text-white px-6 py-4 rounded-lg sm:w-64"
           />
 
           <AnimatedCard
@@ -64,7 +60,7 @@ export default function About() {
             download
             showDownloadIcon
             label={t("about.cvEn")}
-            className="bg-[#9b2242] border border-[#2a2a2a] hover:border-[#9b2242] hover:text-[#9b2242] text-white px-6 py-4 rounded-lg"
+            className="bg-[#9b2242] hover:brightness-110 text-white px-6 py-4 rounded-lg sm:w-64"
           />
         </div>
       </Reveal>

@@ -2,6 +2,7 @@
 import AnimatedCard from "@/components/AnimatedCard";
 import Reveal from "@/components/Reveal";
 import Image from "next/image";
+import SectionHeading from "@/components/SectionHeading";
 import { useI18n } from "@/i18n/I18nProvider"; // 👈 import necessário
 
 export default function Languages() {
@@ -35,28 +36,21 @@ export default function Languages() {
       id="languages"
       className="section flex flex-col items-center text-center"
     >
-      {/* Cabeçalho da seção */}
-      <Reveal>
-        <div className="mb-10">
-          <p className="uppercase tracking-widest text-[#9b9b9b] text-sm">
-            {t("langs.heading")}
-          </p>
-          <h2 className="text-3xl md:text-4xl font-semibold mt-2">
-            {t("langs.title")}{" "}
-            <span className="text-[#9b2242]">{t("langs.highlight")}</span>
-          </h2>
-        </div>
-      </Reveal>
+      <SectionHeading
+        eyebrow={t("langs.heading")}
+        title={t("langs.title")}
+        highlight={t("langs.highlight")}
+      />
 
       {/* Cards */}
       <Reveal delay={0.2}>
-        <div className="grid sm:grid-cols-2 md:grid-cols-4 gap-8 justify-center max-w-4xl">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6 w-full max-w-4xl">
           {languages.map((lang, i) => (
             <AnimatedCard
               key={i}
-              className="p-6 flex flex-col items-center justify-center text-center gap-4 min-w-[180px]"
+              className="p-5 flex flex-col items-center justify-center text-center gap-3"
             >
-              <div className="flex justify-center items-center h-[60px]">
+              <div className="flex justify-center items-center h-12">
                 <Image
                   src={lang.flag}
                   alt={`${lang.name} flag`}
