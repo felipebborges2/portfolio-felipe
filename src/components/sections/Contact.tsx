@@ -22,19 +22,19 @@ export default function Contact() {
 
   const quickLinks = [
     {
-      icon: <Mail className="text-[#9b2242]" />,
+      icon: <Mail className="text-accent-fg" />,
       title: t("contact.email"),
       content: CONTACT_EMAIL,
       href: `mailto:${CONTACT_EMAIL}`,
     },
     {
-      icon: <Phone className="text-[#9b2242]" />,
+      icon: <Phone className="text-accent-fg" />,
       title: t("contact.whatsapp"),
       content: "+55 51 99236-7575",
       href: "https://wa.me/5551992367575?text=Hello%20Felipe!%20I%20found%20your%20portfolio%20and%20would%20like%20to%20get%20in%20touch.",
     },
     {
-      icon: <MapPin className="text-[#9b2242]" />,
+      icon: <MapPin className="text-accent-fg" />,
       title: t("contact.location"),
       content: t("contact.city"),
       href: "https://www.google.com/maps/place/Porto+Alegre,+RS/",
@@ -72,7 +72,7 @@ export default function Contact() {
             value={name}
             onChange={(e) => setName(e.target.value)}
             placeholder={t("contact.form.namePlaceholder")}
-            className="w-full rounded-lg bg-[#151515] border border-[#1f1f1f] px-4 py-2.5 text-white placeholder:text-[#6b6b6b] outline-none transition focus:border-[#9b2242] focus-visible:ring-2 focus-visible:ring-[#9b2242]/50"
+            className="w-full rounded-lg bg-[#151515] border border-[#1f1f1f] px-4 py-2.5 text-white placeholder:text-[#8a8a8a] outline-none transition focus:border-[#9b2242] focus-visible:ring-2 focus-visible:ring-[#9b2242]/50"
           />
         </div>
 
@@ -88,7 +88,7 @@ export default function Contact() {
             value={email}
             onChange={(e) => setEmail(e.target.value)}
             placeholder={t("contact.form.emailPlaceholder")}
-            className="w-full rounded-lg bg-[#151515] border border-[#1f1f1f] px-4 py-2.5 text-white placeholder:text-[#6b6b6b] outline-none transition focus:border-[#9b2242] focus-visible:ring-2 focus-visible:ring-[#9b2242]/50"
+            className="w-full rounded-lg bg-[#151515] border border-[#1f1f1f] px-4 py-2.5 text-white placeholder:text-[#8a8a8a] outline-none transition focus:border-[#9b2242] focus-visible:ring-2 focus-visible:ring-[#9b2242]/50"
           />
         </div>
 
@@ -104,7 +104,7 @@ export default function Contact() {
             value={message}
             onChange={(e) => setMessage(e.target.value)}
             placeholder={t("contact.form.messagePlaceholder")}
-            className="w-full rounded-lg bg-[#151515] border border-[#1f1f1f] px-4 py-2.5 text-white placeholder:text-[#6b6b6b] outline-none transition focus:border-[#9b2242] focus-visible:ring-2 focus-visible:ring-[#9b2242]/50 resize-y"
+            className="w-full rounded-lg bg-[#151515] border border-[#1f1f1f] px-4 py-2.5 text-white placeholder:text-[#8a8a8a] outline-none transition focus:border-[#9b2242] focus-visible:ring-2 focus-visible:ring-[#9b2242]/50 resize-y"
           />
         </div>
 
@@ -112,7 +112,7 @@ export default function Contact() {
           <Send className="w-4 h-4" aria-hidden="true" />
           {t("contact.form.submit")}
         </button>
-        <p className="text-xs text-[#6b6b6b]">{t("contact.form.note")}</p>
+        <p className="text-xs text-[#9b9b9b]">{t("contact.form.note")}</p>
       </motion.form>
 
       <div className="mt-12 grid sm:grid-cols-3 gap-3 sm:gap-6 max-w-2xl w-full">

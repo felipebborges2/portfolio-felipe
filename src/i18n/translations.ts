@@ -1,5 +1,17 @@
 export const translations = {
   en: {
+    // METADATA (title, description, OpenGraph / Twitter)
+    meta: {
+      title: "Felipe Borges — Deep Learning, Data Science & Software",
+      description:
+        "Portfolio of Felipe Borges: deep learning and data science with a Medical Physics background — undergraduate thesis on PCOS detection in ultrasound, machine learning projects and full-stack software.",
+      ogTagline: "Deep Learning · Data Science · Software",
+      ogSubtitle: "Medical Physics, UFCSPA",
+      pcosTitle: "Deep Learning Generalization for PCOS Detection — Felipe Borges",
+      pcosDescription:
+        "Undergraduate thesis in progress: a ResNet-50 for PCOS detection in ultrasound images, evaluated on public datasets from different sources, with federated learning (Flower, FedAvg vs. FedProx) as the next step.",
+    },
+
     // NAVIGATION
     nav: {
       home: "Home",
@@ -9,7 +21,9 @@ export const translations = {
       languages: "Languages",
       journey: "Journey",
       contactMe: "Contact Me",
-      toggle: "PT / EN",
+      switchTo: "Ver em português",
+      main: "Main navigation",
+      skip: "Skip to content",
       openMenu: "Open menu",
       closeMenu: "Close menu",
     },
@@ -50,6 +64,8 @@ export const translations = {
       approachLabel: "Approach",
       resultLabel: "Result",
       details: "Details",
+      enlarge: "Enlarge screenshot of",
+      close: "Close image",
     },
 
     // SKILLS
@@ -137,6 +153,13 @@ export const translations = {
       },
     },
 
+    // 404
+    notFound: {
+      title: "Page not found",
+      text: "This page doesn't exist or has moved.",
+      home: "Back to home",
+    },
+
     // FOOTER
     footer: {
       rights: "All rights reserved.",
@@ -144,6 +167,18 @@ export const translations = {
   },
 
   pt: {
+    // METADATA (title, description, OpenGraph / Twitter)
+    meta: {
+      title: "Felipe Borges — Deep Learning, Ciência de Dados e Software",
+      description:
+        "Portfólio de Felipe Borges: deep learning e ciência de dados com formação em Física Médica — TCC sobre detecção de PCOS em ultrassom, projetos de machine learning e software full-stack.",
+      ogTagline: "Deep Learning · Ciência de Dados · Software",
+      ogSubtitle: "Física Médica, UFCSPA",
+      pcosTitle: "Generalização de Deep Learning na Detecção de PCOS — Felipe Borges",
+      pcosDescription:
+        "TCC em andamento: uma ResNet-50 para detecção de PCOS em imagens de ultrassom, avaliada em bases públicas de fontes distintas, com aprendizado federado (Flower, FedAvg vs. FedProx) como próxima etapa.",
+    },
+
     // NAVIGATION
     nav: {
       home: "Início",
@@ -153,7 +188,9 @@ export const translations = {
       languages: "Idiomas",
       journey: "Jornada",
       contactMe: "Fale Comigo",
-      toggle: "EN / PT",
+      switchTo: "View in English",
+      main: "Navegação principal",
+      skip: "Pular para o conteúdo",
       openMenu: "Abrir menu",
       closeMenu: "Fechar menu",
     },
@@ -194,6 +231,8 @@ export const translations = {
       approachLabel: "Abordagem",
       resultLabel: "Resultado",
       details: "Ver detalhes",
+      enlarge: "Ampliar imagem de",
+      close: "Fechar imagem",
     },
 
     // SKILLS
@@ -279,6 +318,13 @@ export const translations = {
         submit: "Enviar Mensagem",
         note: "Abre seu aplicativo de email com essa mensagem já preenchida, endereçada a mim.",
       },
+    },
+
+    // 404
+    notFound: {
+      title: "Página não encontrada",
+      text: "Esta página não existe ou mudou de endereço.",
+      home: "Voltar ao início",
     },
 
     // FOOTER

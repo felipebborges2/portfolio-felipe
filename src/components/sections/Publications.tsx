@@ -22,7 +22,7 @@ export default function Publications() {
                   href={doiUrl(pub.doi)}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="group inline-flex items-start gap-2 text-base md:text-lg font-semibold text-white hover:text-[#d0738d] transition"
+                  className="group inline-flex items-start gap-2 text-base md:text-lg font-semibold text-white hover:text-accent-fg transition"
                 >
                   <cite className="not-italic">
                     <PublicationTitle pub={pub} />

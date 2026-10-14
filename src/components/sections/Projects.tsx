@@ -11,7 +11,7 @@ import SectionHeading from "@/components/SectionHeading";
 import { localize } from "@/data/shared";
 
 export default function Projects() {
-  const { t, lang } = useI18n();
+  const { t, lang, href } = useI18n();
   const [selected, setSelected] = useState<{ src: string; width: number; height: number; alt: string } | null>(null);
 
   return (
@@ -37,15 +37,21 @@ export default function Projects() {
               className="p-6 flex flex-col gap-3 w-full sm:w-[calc(50%-1rem)] lg:w-[calc(33.333%-1.334rem)]"
             >
               {p.image ? (
-                <Image
-                  src={p.image.src}
-                  width={p.image.width}
-                  height={p.image.height}
-                  sizes="(min-width: 1024px) 300px, (min-width: 640px) 50vw, 100vw"
-                  alt={p.image.alt[lang]}
-                  className="w-full h-40 object-cover rounded-md mb-1 cursor-pointer"
+                <button
+                  type="button"
+                  aria-label={`${t("projects.enlarge")} ${title}`}
                   onClick={() => setSelected({ ...p.image!, alt: p.image!.alt[lang] })}
-                />
+                  className="block w-full mb-1 rounded-md cursor-zoom-in"
+                >
+                  <Image
+                    src={p.image.src}
+                    width={p.image.width}
+                    height={p.image.height}
+                    sizes="(min-width: 1024px) 300px, (min-width: 640px) 50vw, 100vw"
+                    alt={p.image.alt[lang]}
+                    className="w-full h-40 object-cover rounded-md"
+                  />
+                </button>
               ) : (
                 // Typographic header, same footprint as a screenshot so
                 // cards stay aligned across the row. No invented imagery.
@@ -68,26 +74,26 @@ export default function Projects() {
               {p.image && <h3 className="text-lg font-semibold text-white">{title}</h3>}
 
               {p.status && (
-                <span className="text-xs font-semibold text-[#d0738d] bg-[#9b2242]/10 border border-[#9b2242]/30 rounded-md px-2 py-1">
+                <span className="text-xs font-semibold text-accent-fg bg-[#9b2242]/10 border border-[#9b2242]/30 rounded-md px-2 py-1">
                   {p.status[lang]}
                 </span>
               )}
 
               <dl className="text-sm space-y-2 w-full">
                 <div>
-                  <dt className="uppercase tracking-wide text-[10px] text-[#9b9b9b]/70 font-semibold">
+                  <dt className="uppercase tracking-wide text-[10px] text-[#9b9b9b] font-semibold">
                     {t("projects.problemLabel")}
                   </dt>
                   <dd className="text-[#9b9b9b] leading-relaxed line-clamp-2">{content.problem}</dd>
                 </div>
                 <div>
-                  <dt className="uppercase tracking-wide text-[10px] text-[#9b9b9b]/70 font-semibold">
+                  <dt className="uppercase tracking-wide text-[10px] text-[#9b9b9b] font-semibold">
                     {t("projects.approachLabel")}
                   </dt>
                   <dd className="text-[#9b9b9b] leading-relaxed line-clamp-2">{content.approach}</dd>
                 </div>
                 <div>
-                  <dt className="uppercase tracking-wide text-[10px] text-[#9b9b9b]/70 font-semibold">
+                  <dt className="uppercase tracking-wide text-[10px] text-[#9b9b9b] font-semibold">
                     {t("projects.resultLabel")}
                   </dt>
                   <dd className="text-[#9b9b9b] leading-relaxed line-clamp-2">{content.result}</dd>
@@ -112,7 +118,7 @@ export default function Projects() {
                   cards with shorter copy still line up across a row. */}
               <div className="mt-auto pt-2 flex flex-wrap gap-3">
                 {p.links.detail && (
-                  <Link href={p.links.detail} className="link-btn">
+                  <Link href={href(p.links.detail)} className="link-btn">
                     <ArrowRight className="w-3.5 h-3.5" aria-hidden="true" />
                     {t("projects.details")}
                   </Link>
@@ -144,7 +150,9 @@ export default function Projects() {
           );
         })}
       </div>
-      {selected && <Lightbox {...selected} onClose={() => setSelected(null)} />}
+      {selected && (
+        <Lightbox {...selected} closeLabel={t("projects.close")} onClose={() => setSelected(null)} />
+      )}
     </section>
   );
 }

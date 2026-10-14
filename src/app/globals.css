@@ -10,6 +10,27 @@ html, body {
   @apply bg-[#0d0d0d] text-[#f5f5f5] antialiased scroll-smooth;
 }
 
+/* Visible keyboard focus everywhere (mouse clicks don't trigger it). */
+:focus-visible {
+  outline: 2px solid #d0738d;
+  outline-offset: 2px;
+}
+
+/* Anchor targets clear the fixed 64px header. */
+[id] {
+  scroll-margin-top: 5rem;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html, body {
+    scroll-behavior: auto;
+  }
+  *, *::before, *::after {
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+  }
+}
+
 /*
  * Custom classes live in @layer components so Tailwind places them
  * *before* the utilities layer in the compiled CSS — that way a plain
@@ -43,7 +64,12 @@ html, body {
 
   /* Small icon+label link, used for "Live" / "GitHub" on project cards. */
   .link-btn {
-    @apply inline-flex items-center gap-1.5 rounded-md border border-[#2a2a2a] px-2.5 py-1.5 text-xs font-medium text-[#f5f5f5] transition hover:border-[#9b2242] hover:text-[#9b2242];
+    @apply inline-flex items-center gap-1.5 rounded-md border border-[#2a2a2a] px-2.5 py-1.5 text-xs font-medium text-[#f5f5f5] transition hover:border-[#9b2242] hover:text-accent-fg;
+  }
+
+  /* Visually hidden until focused by keyboard. */
+  .skip-link {
+    @apply sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[100] focus:rounded-md focus:bg-white focus:px-4 focus:py-2 focus:text-black;
   }
 
   /* Long-form copy measure (About, Journey): ~65-75 characters per line. */

@@ -18,7 +18,7 @@ export default function SectionHeading({ eyebrow, title, highlight, description 
           {highlight && (
             <>
               {" "}
-              <span className="text-[#9b2242]">{highlight}</span>
+              <span className="text-accent-fg">{highlight}</span>
             </>
           )}
         </h2>

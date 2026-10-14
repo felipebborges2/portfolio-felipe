@@ -10,7 +10,7 @@ import SectionHeading from "@/components/SectionHeading";
 import PublicationTitle from "@/components/PublicationTitle";
 
 export default function Journey() {
-  const { t, lang } = useI18n();
+  const { t, lang, href } = useI18n();
   const [expanded, setExpanded] = useState<Set<string>>(new Set());
 
   const toggle = (id: string) => {
@@ -52,7 +52,7 @@ export default function Journey() {
                   />
 
                   <div className="prose-measure">
-                    <p className="text-sm text-[#9b2242] font-semibold mb-1">
+                    <p className="text-sm text-accent-fg font-semibold mb-1">
                       {step.period[lang]}
                     </p>
                     <h3 className="text-lg md:text-xl font-semibold text-white mb-1">
@@ -73,7 +73,7 @@ export default function Journey() {
                             return (
                             <li key={a.id}>
                               {a.period && (
-                                <p className="text-xs font-semibold text-[#d0738d]">{a.period}</p>
+                                <p className="text-xs font-semibold text-accent-fg">{a.period}</p>
                               )}
                               <p className="text-sm font-medium text-white">{a.title[lang]}</p>
                               <p className="text-sm text-[#9b9b9b] leading-relaxed">{a.text[lang]}</p>
@@ -83,15 +83,15 @@ export default function Journey() {
                                   target="_blank"
                                   rel="noopener noreferrer"
                                   lang="en"
-                                  className="mt-1 inline-block text-sm italic text-[#d0738d] underline-offset-2 hover:underline"
+                                  className="mt-1 inline-block text-sm italic text-accent-fg underline-offset-2 hover:underline"
                                 >
                                   <PublicationTitle pub={pub} />
                                 </a>
                               )}
                               {a.href && (
                                 <Link
-                                  href={a.href}
-                                  className="mt-1 inline-flex items-center gap-1 text-sm font-medium text-[#d0738d] hover:brightness-110 transition"
+                                  href={href(a.href)}
+                                  className="mt-1 inline-flex items-center gap-1 text-sm font-medium text-accent-fg hover:brightness-110 transition"
                                 >
                                   {t("journey.viewProject")}
                                   <ArrowRight className="w-3.5 h-3.5" aria-hidden="true" />
@@ -107,7 +107,7 @@ export default function Journey() {
                       type="button"
                       onClick={() => toggle(step.id)}
                       aria-expanded={isOpen}
-                      className="mt-3 text-sm font-medium text-[#9b2242] hover:brightness-110 transition"
+                      className="mt-3 text-sm font-medium text-accent-fg hover:brightness-110 transition"
                     >
                       {isOpen ? t("journey.readLess") : t("journey.readMore")}
                     </button>

@@ -18,7 +18,7 @@ export default function Hero() {
       <Reveal delay={0}>
         <div className="grid gap-10 md:grid-cols-2 items-center">
           <div className="space-y-6">
-            <p className="uppercase tracking-widest text-sm font-semibold text-[#d0738d]">
+            <p className="uppercase tracking-widest text-sm font-semibold text-accent-fg">
               {t("hero.eyebrow")}
             </p>
             <motion.h1
@@ -47,24 +47,29 @@ export default function Hero() {
 
             <div className="flex items-center gap-3 pt-2">
               <a
-                className="link-subtle"
+                className="link-subtle p-1 rounded-md"
                 href="https://github.com/felipebborges2"
                 target="_blank"
+                rel="noopener noreferrer"
+                aria-label="GitHub"
               >
-                <Github />
+                <Github aria-hidden="true" />
               </a>
               <a
-                className="link-subtle"
+                className="link-subtle p-1 rounded-md"
                 href="https://www.linkedin.com/in/felipebborges"
                 target="_blank"
+                rel="noopener noreferrer"
+                aria-label="LinkedIn"
               >
-                <Linkedin />
+                <Linkedin aria-hidden="true" />
               </a>
               <a
-                className="link-subtle"
+                className="link-subtle p-1 rounded-md"
                 href="mailto:fisfelipeborges@gmail.com"
+                aria-label="Email"
               >
-                <Mail />
+                <Mail aria-hidden="true" />
               </a>
             </div>
           </div>

@@ -17,14 +17,14 @@ function SectionTitle({ children }: { children: React.ReactNode }) {
 }
 
 export default function PcosDetail() {
-  const { t, lang } = useI18n();
+  const { t, lang, href } = useI18n();
   const d = pcosDetail[lang];
 
   return (
     <article className="section pt-24 md:pt-28">
       <div className="prose-measure">
         <Link
-          href="/#projects"
+          href={href("/#projects")}
           className="inline-flex items-center gap-1.5 text-sm text-[#9b9b9b] hover:text-white transition"
         >
           <ArrowLeft className="w-4 h-4" aria-hidden="true" />
@@ -41,7 +41,7 @@ export default function PcosDetail() {
 
           <div className="mt-4 flex flex-wrap items-center gap-3 text-sm">
             {project.status && (
-              <span className="font-semibold text-[#d0738d] bg-[#9b2242]/10 border border-[#9b2242]/30 rounded-md px-2 py-1">
+              <span className="font-semibold text-accent-fg bg-[#9b2242]/10 border border-[#9b2242]/30 rounded-md px-2 py-1">
                 {project.status[lang]}
               </span>
             )}

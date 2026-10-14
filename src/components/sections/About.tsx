@@ -32,19 +32,13 @@ export default function About() {
         <div className="mt-10 grid sm:grid-cols-2 lg:grid-cols-4 gap-4 max-w-5xl w-full">
           {highlights.map((h, i) => (
             <AnimatedCard key={i} className="p-5 flex flex-col items-center text-center gap-2">
-              <p className="text-2xl font-bold text-[#9b2242]">{h.value[lang]}</p>
+              <p className="text-2xl font-bold text-accent-fg">{h.value[lang]}</p>
               <p className="text-[#9b9b9b] text-sm leading-snug">{h.label[lang]}</p>
             </AnimatedCard>
           ))}
         </div>
       </Reveal>
 
-      {/*
-        TODO (blocks publishing): both CV PDFs in public/ still describe the
-        acoustic neuroma project and predate the TCC, graduation date and
-        OncoPredict. Replace curriculo-felipe-borges-pt.pdf and
-        curriculum-felipe-borges-en.pdf before the site is published.
-      */}
       <Reveal delay={0.4}>
         <div className="mt-10 flex flex-col sm:flex-row justify-center items-stretch gap-4 w-full sm:w-auto">
           <AnimatedCard

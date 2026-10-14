@@ -37,7 +37,7 @@ export default function Skills() {
                 viewport={{ once: true }}
                 className="w-full flex flex-col gap-3"
               >
-                <h3 className="text-base font-semibold text-[#9b2242]">
+                <h3 className="text-base font-semibold text-accent-fg">
                   {t(`skills.groups.${group.titleKey}`)}
                 </h3>
 

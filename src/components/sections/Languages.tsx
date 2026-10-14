@@ -53,7 +53,7 @@ export default function Languages() {
               <div className="flex justify-center items-center h-12">
                 <Image
                   src={lang.flag}
-                  alt={`${lang.name} flag`}
+                  alt=""
                   width={48}
                   height={48}
                   className="rounded-md object-contain"
