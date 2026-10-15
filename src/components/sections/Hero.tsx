@@ -82,9 +82,9 @@ export default function Hero() {
             transition={{ type: "spring", stiffness: 300, damping: 15 }}
           >
             <Image
-              src="/felipe.jpeg"
-              width={2151}
-              height={2868}
+              src="/felipe-borges.jpeg"
+              width={502}
+              height={588}
               sizes="(min-width: 768px) 224px, 176px"
               priority
               alt="Felipe Borges"

@@ -10,7 +10,7 @@ export function personJsonLd() {
     "@id": PERSON_ID,
     name: "Felipe Borges",
     url: SITE_URL,
-    image: `${SITE_URL}/felipe.jpeg`,
+    image: `${SITE_URL}/felipe-borges.jpeg`,
     affiliation: {
       "@type": "CollegeOrUniversity",
       name: "Universidade Federal de Ciências da Saúde de Porto Alegre (UFCSPA)",
