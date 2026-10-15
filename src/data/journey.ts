@@ -102,12 +102,12 @@ export const journeyItems: JourneyItem[] = [
     },
     role: { en: "Internship", pt: "Estágio" },
     summary: {
-      en: "Radiological protection engineering, plus SQL, Power BI and JavaScript in a real health-system data pipeline.",
-      pt: "Engenharia de proteção radiológica, além de SQL, Power BI e JavaScript em um pipeline real de dados do sistema de saúde.",
+      en: "Radiological protection, plus SQL, Power BI and JavaScript in a real health-system data pipeline.",
+      pt: "Proteção radiológica, além de SQL, Power BI e JavaScript em um pipeline real de dados do sistema de saúde.",
     },
     detail: {
-      en: "I worked on radiation shielding calculations, radiological protection, and equipment evaluation/licensing. I also contributed to the development of the system used to analyze medical imaging across the state, where I learned and applied SQL, Power BI, and JavaScript in practical routines.",
-      pt: "Atuei com cálculos de blindagem radiológica, proteção radiológica e avaliação/licenciamento de equipamentos. Também contribuí para o desenvolvimento do sistema utilizado para análise de imagens médicas em todo o estado, onde aprendi e apliquei SQL, Power BI e JavaScript em rotinas práticas.",
+      en: "I worked on radiation shielding calculations, radiological protection, and equipment evaluation. I also contributed to the development of the system used to analyze medical imaging across the state, where I learned and applied SQL, Power BI, and JavaScript in practical routines.",
+      pt: "Atuei com cálculos de blindagem radiológica, proteção radiológica e avaliação de equipamentos. Também contribuí para o desenvolvimento do sistema utilizado para análise de imagens médicas em todo o estado, onde aprendi e apliquei SQL, Power BI e JavaScript em rotinas práticas.",
     },
   },
   {
