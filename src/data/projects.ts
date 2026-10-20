@@ -116,6 +116,53 @@ export const projects: Project[] = [
     },
   },
   {
+    id: "lavanday-express",
+    title: "Lavanday Express",
+    eyebrow: {
+      en: "Website for a local business",
+      pt: "Site para negócio local",
+    },
+    status: {
+      en: "Live · custom domain",
+      pt: "Publicado · domínio próprio",
+    },
+    image: {
+      src: "/projects/lavanday-home.jpeg",
+      width: 2880,
+      height: 1800,
+      alt: {
+        en: "Lavanday Express home page on desktop, with the price per cycle, directions and WhatsApp buttons, and opening hours",
+        pt: "Página inicial da Lavanday Express no computador, com o preço por ciclo, os botões de rota e WhatsApp e o horário de funcionamento",
+      },
+    },
+    tags: ["Next.js", "React", "TypeScript", "Tailwind", "Cloudflare Pages", "GoatCounter"],
+    // No `repo` link on purpose: the repository is private.
+    links: {
+      live: "https://lavandayexpress.com.br",
+      detail: "/projects/lavanday-express",
+    },
+    // Facts only: published, tested, metrics configured. No business results
+    // until there is data (see src/data/lavanday.ts).
+    content: {
+      en: {
+        problem:
+          "Customers of a self-service laundromat need the price, opening hours and directions before they visit, and a quick way to ask for help about a specific machine once they are in the store.",
+        approach:
+          "Responsive Next.js site with the price and directions on the first mobile screen, plus a support page reached by QR code where the customer picks the machine and the reason and opens WhatsApp with the message already written.",
+        result:
+          "Live on its own domain on Cloudflare Pages, with the support flow tested end to end and visit and click metrics in place.",
+      },
+      pt: {
+        problem:
+          "Clientes de uma lavanderia de autoatendimento precisam saber preço, horário e como chegar antes da visita e, já na loja, ter um jeito rápido de pedir ajuda sobre uma máquina específica.",
+        approach:
+          "Site responsivo em Next.js com preço e rota na primeira tela do celular, e uma página de suporte acessada por QR code em que o cliente escolhe a máquina e o motivo e abre o WhatsApp com a mensagem pronta.",
+        result:
+          "Publicado em domínio próprio no Cloudflare Pages, com o fluxo de suporte testado de ponta a ponta e métricas de visitas e cliques configuradas.",
+      },
+    },
+  },
+  {
     id: "atlasmind",
     title: "AtlasMind",
     image: {

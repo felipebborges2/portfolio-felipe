@@ -1,7 +1,7 @@
 import type { MetadataRoute } from "next";
 import { SITE_URL, localePath } from "@/i18n/paths";
 
-const PATHS = ["/", "/projects/pcos-generalization"];
+const PATHS = ["/", "/projects/pcos-generalization", "/projects/lavanday-express"];
 
 export default function sitemap(): MetadataRoute.Sitemap {
   return PATHS.flatMap((path) => {

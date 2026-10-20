@@ -25,6 +25,11 @@ Medical Physics background. Live at <https://felipebborges.vercel.app>
       unused (an editor screenshot showing AUC values). It stays as a reference
       until it is replaced by an exported ROC curve.
 
+- [ ] **Lavanday Express follow-up.** The case study states no business
+      results. Revisit `src/data/lavanday.ts` when there are a few months of
+      metrics, when the QR plaque installation is confirmed and when the
+      Google and Instagram links are updated.
+
 ## Stack
 
 - [Next.js 16](https://nextjs.org) (App Router, Turbopack) and React 19
@@ -52,6 +57,7 @@ src/
       layout.tsx                  <html lang>, site-wide metadata, header
       page.tsx                    home page + JSON-LD (Person, ScholarlyArticle)
       projects/pcos-generalization/page.tsx   TCC detail page
+      projects/lavanday-express/page.tsx      Lavanday Express case study
       [...missing]/page.tsx       unknown URLs → localized 404
       not-found.tsx               localized 404 page
       opengraph-image.tsx         generated OpenGraph card per language
@@ -73,6 +79,7 @@ language is a `Localized<T>` (`{ en, pt }`).
 | `profile.ts` | Expected graduation month and the `graduated` flag |
 | `projects.ts` | Project cards: problem → approach → result, tags, links |
 | `pcos.ts` | TCC detail page: problem, methodology, datasets, next steps |
+| `lavanday.ts` | Lavanday Express case study: context, decisions, support flow, publishing, metrics |
 | `publications.ts` | Peer-reviewed publications (references stay in English) |
 | `journey.ts` | Timeline: institutions, roles, academic activities |
 | `skills.ts` | Skill groups; each skill shows where it was applied, if documented |

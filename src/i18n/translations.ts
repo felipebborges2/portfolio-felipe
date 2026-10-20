@@ -10,6 +10,9 @@ export const translations = {
       pcosTitle: "Deep Learning Generalization for PCOS Detection | Felipe Borges",
       pcosDescription:
         "Undergraduate thesis in progress: a ResNet-50 for PCOS detection in ultrasound images, evaluated on public datasets from different sources, with federated learning (Flower, FedAvg vs. FedProx) as the next step.",
+      lavandayTitle: "Lavanday Express: laundromat website and in-store support | Felipe Borges",
+      lavandayDescription:
+        "Case study: a responsive website for a self-service laundromat in Feira de Santana, Brazil, with a QR code support page that identifies the machine and prepares the WhatsApp message.",
     },
 
     // NAVIGATION
@@ -132,6 +135,22 @@ export const translations = {
       tags: "Topics",
     },
 
+    // CASE STUDY PAGE (Lavanday Express)
+    caseStudy: {
+      eyebrow: "Case study · Website for a local business",
+      live: "Visit the site",
+      screenshots: "Screenshots",
+      enlarge: "Enlarge screenshot:",
+      context: "Context and need",
+      role: "My role",
+      decisions: "Interface and content decisions",
+      flow: "In-store support: from QR code to WhatsApp",
+      publishing: "Publishing",
+      metrics: "Metrics",
+      deliverables: "What can be checked",
+      techs: "Technologies",
+    },
+
     // CONTACT
     contact: {
       heading: "Get in Touch",
@@ -178,6 +197,9 @@ export const translations = {
       pcosTitle: "Generalização de Deep Learning na Detecção de PCOS | Felipe Borges",
       pcosDescription:
         "TCC em andamento: uma ResNet-50 para detecção de PCOS em imagens de ultrassom, avaliada em bases públicas de fontes distintas, com aprendizado federado (Flower, FedAvg vs. FedProx) como próxima etapa.",
+      lavandayTitle: "Lavanday Express: site e suporte na loja para lavanderia | Felipe Borges",
+      lavandayDescription:
+        "Case: site responsivo de uma lavanderia de autoatendimento em Feira de Santana (BA), com página de suporte por QR code que identifica a máquina e prepara a mensagem para o WhatsApp.",
     },
 
     // NAVIGATION
@@ -298,6 +320,22 @@ export const translations = {
       limitations: "Limitações",
       nextStep: "Próxima etapa (TCC 2)",
       tags: "Tópicos",
+    },
+
+    // CASE STUDY PAGE (Lavanday Express)
+    caseStudy: {
+      eyebrow: "Case · Site para negócio local",
+      live: "Ver o site",
+      screenshots: "Capturas de tela",
+      enlarge: "Ampliar captura:",
+      context: "Contexto e necessidade",
+      role: "Minha participação",
+      decisions: "Decisões de interface e conteúdo",
+      flow: "Suporte na loja: do QR code ao WhatsApp",
+      publishing: "Publicação",
+      metrics: "Métricas",
+      deliverables: "O que dá para conferir",
+      techs: "Tecnologias",
     },
 
     // CONTACT

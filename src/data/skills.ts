@@ -76,13 +76,13 @@ export const skillGroups: SkillGroup[] = [
     id: "softwareeng",
     titleKey: "softwareeng",
     skills: [
-      { name: "TypeScript", context: same("AtlasMind, CourtView") },
-      { name: "React", context: same("AtlasMind, CourtView, FinZeit") },
+      { name: "TypeScript", context: same("Lavanday Express, AtlasMind, CourtView") },
+      { name: "React", context: same("Lavanday Express, AtlasMind, CourtView, FinZeit") },
       {
         name: "Next.js",
         context: {
-          en: "AtlasMind, CourtView, FinZeit, this site",
-          pt: "AtlasMind, CourtView, FinZeit, este site",
+          en: "Lavanday Express, AtlasMind, CourtView, FinZeit, this site",
+          pt: "Lavanday Express, AtlasMind, CourtView, FinZeit, este site",
         },
       },
       { name: "Node.js", context: same("AtlasMind") },
@@ -101,6 +101,13 @@ export const skillGroups: SkillGroup[] = [
           pt: "Deploy: AtlasMind, Europedia, CourtView, FinZeit",
         },
       },
+      {
+        name: "Cloudflare Pages",
+        context: {
+          en: "Lavanday Express: static export, custom domain",
+          pt: "Lavanday Express: exportação estática, domínio próprio",
+        },
+      },
       { name: "MongoDB", context: same("FinZeit") },
       { name: "SQL", context: { en: "CEVS internship", pt: "Estágio no CEVS" } },
       { name: "Power BI", context: { en: "CEVS internship", pt: "Estágio no CEVS" } },
@@ -113,7 +120,7 @@ export const skillGroups: SkillGroup[] = [
     titleKey: "tools",
     skills: [
       { name: "Data Visualization", context: same("FinZeit: Recharts") },
-      { name: "Responsive Design", context: same("Europedia") },
+      { name: "Responsive Design", context: same("Lavanday Express, Europedia") },
       { name: "API Integration", context: same("AtlasMind: OpenAI API") },
       { name: "Git" },
       { name: "State Management" },
